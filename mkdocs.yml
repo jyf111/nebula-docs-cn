@@ -164,8 +164,11 @@ plugins:
         - 20.appendix/history.md
         - 20.appendix/mind-map.md
         - 4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose.md
+<<<<<<< HEAD
         - 3.ngql-guide/6.functions-and-expressions/9.user-defined-functions.md
         - nebula-operator/*
+=======
+>>>>>>> a7a80028a (fixes and hide docker-compose deployment in ent-doc (#2797))
         # exclude.comm.end
 
 # Exclude the file with the following file name.

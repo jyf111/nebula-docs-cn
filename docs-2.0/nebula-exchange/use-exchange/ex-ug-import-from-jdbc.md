@@ -56,6 +56,11 @@ mysql> desc serve;
 
 - Spark：2.3.0，单机版
 
+<<<<<<< HEAD
+=======
+- Hadoop：2.9.2，伪分布式部署
+
+>>>>>>> a7a80028a (fixes and hide docker-compose deployment in ent-doc (#2797))
 - {{nebula.name}}：{{nebula.release}}。
 
 ## 前提条件
