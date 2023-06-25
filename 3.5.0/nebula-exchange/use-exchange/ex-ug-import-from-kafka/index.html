@@ -7037,7 +7037,8 @@
 <li>已经安装并开启 Kafka 服务。</li>
 </ul>
 <h2 id="_3">注意事项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>导入 Kafka 数据时只支持 Client 模式，即参数<code>tags.type.sink</code>和<code>edges.type.sink</code>的值为<code>client</code>。</p>
+<p>导入 Kafka 数据时只支持 Client 模式，即参数<code>tags.type.sink</code>和<code>edges.type.sink</code>的值为<code>client</code>。
+导入 Kafka 数据时请勿使用 nebula-exchange 3.4.0 版本，该版本增加了对导入数据的cache，不支持流式数据导入。 可使用 3.0.0，3.3.0，3.5.0版本。</p>
 <h2 id="_4">操作步骤<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="1_schema">步骤 1：在悦数图数据库中创建 Schema<a class="headerlink" href="#1_schema" title="Permanent link">&para;</a></h3>
 <p>分析数据，按以下步骤在悦数图数据库中创建 Schema：</p>
