@@ -1155,7 +1155,7 @@ nav:
   #     - 常见问题: nebula-operator/7.operator-faq.md
 
   - 图计算:
-    - 算法简介: graph-computing/algorithm-description.md
+#    - 算法简介: graph-computing/algorithm-description.md
     - NebulaGraph Algorithm: graph-computing/nebula-algorithm.md
   
   - NebulaGraph Spark Connector: nebula-spark-connector.md
