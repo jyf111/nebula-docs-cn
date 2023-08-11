@@ -27,6 +27,13 @@
 - 修复通过管道符删除边导致 Graph 服务崩溃的问题。 [#5645](https://github.com/vesoft-inc/nebula/pull/5645)
 - 修复`MATCH`语句中匹配多跳时返回结果缺少边属性的问题。 [#5646](https://github.com/vesoft-inc/nebula/pull/5646)
 
+## 变更
+
+增强全文索引特性，涉及变更内容如下：
+
+- 原有的全文索引功能由调用 ElasticSearch 的 Term-level queries 改为 Full text queries 方式。
+- 变更后除了支持原有的通配符、正则、模糊匹配等方式（但语法发生变化），还增加了对分词的支持（依赖 ElasticSearch 自身使用的分词器），查询结果包含评分结果。更多语法请参见 [ElasticSearch 官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/full-text-queries.html)。
+
 ## 历史版本
 
 [历史版本](https://www.nebula-graph.com.cn/tags/%E5%8F%91%E7%89%88%E8%AF%B4%E6%98%8E)
