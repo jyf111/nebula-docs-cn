@@ -5463,6 +5463,13 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    变更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     历史版本
   </a>
   
@@ -5694,6 +5701,13 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    变更
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     历史版本
   </a>
   
@@ -5747,7 +5761,13 @@
 <li>修复通过管道符删除边导致 Graph 服务崩溃的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/5645">#5645</a></li>
 <li>修复<code>MATCH</code>语句中匹配多跳时返回结果缺少边属性的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/5646">#5646</a></li>
 </ul>
-<h2 id="_4">历史版本<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">变更<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>增强全文索引特性，涉及变更内容如下：</p>
+<ul>
+<li>原有的全文索引功能由调用 ElasticSearch 的 Term-level queries 改为 Full text queries 方式。</li>
+<li>变更后除了支持原有的通配符、正则、模糊匹配等方式（但语法发生变化），还增加了对分词的支持（依赖 ElasticSearch 自身使用的分词器），查询结果包含评分结果。更多语法请参见 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/full-text-queries.html">ElasticSearch 官方文档</a>。</li>
+</ul>
+<h2 id="_5">历史版本<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.nebula-graph.com.cn/tags/%E5%8F%91%E7%89%88%E8%AF%B4%E6%98%8E">历史版本</a></p>
 
   <hr>
