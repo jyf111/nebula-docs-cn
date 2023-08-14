@@ -5727,22 +5727,22 @@
 <span class="w">  </span>bash
 </code></pre></div>
 <ul>
-<li><code>--security-opt seccomp=unconfined</code>: 为了避免 Docker 容器中的 CMake 编译过程中出现<code>Killed</code>错误，不限制容器进程可以进行的系统调用。</li>
+<li><code>--security-opt seccomp=unconfined</code>：为了避免 Docker 容器中的 CMake 编译过程中出现<code>Killed</code>错误，不限制容器进程可以进行的系统调用。</li>
 </ul>
 <ul>
-<li><code>-v "$PWD":/home</code>: 表示当前的 NebulaGraph 代码本地的路径会被挂载到容器内部的<code>/home</code>目录。</li>
+<li><code>-v "$PWD":/home</code>：表示当前的 NebulaGraph 代码本地的路径会被挂载到容器内部的<code>/home</code>目录。</li>
 </ul>
 <ul>
-<li><code>-w /home</code>: 将容器的工作目录设置为<code>/home</code>，在容器中运行任何命令都将以该目录作为当前目录。</li>
+<li><code>-w /home</code>：将容器的工作目录设置为<code>/home</code>，在容器中运行任何命令都将以该目录作为当前目录。</li>
 </ul>
 <ul>
-<li><code>--name nebula_dev</code>: 为容器指定一个名称，方便管理和操作。</li>
+<li><code>--name nebula_dev</code>：为容器指定一个名称，方便管理和操作。</li>
 </ul>
 <ul>
-<li><code>vesoft/nebula-dev:ubuntu2004</code>: 使用<code>vesoft/nebula-dev</code>编译镜像的<code>ubuntu2004</code>版本。</li>
+<li><code>vesoft/nebula-dev:ubuntu2004</code>：使用<code>vesoft/nebula-dev</code>编译镜像的<code>ubuntu2004</code>版本。</li>
 </ul>
 <ul>
-<li><code>bash</code>: 在容器中运行<code>bash</code>命令，进入容器的交互式终端。</li>
+<li><code>bash</code>：在容器中运行<code>bash</code>命令，进入容器的交互式终端。</li>
 </ul>
 <p>成功运行以上命令后，将会自动进入容器的交互式终端。若退出容器，可执行<code>docker exec -ti nebula_dev bash</code>重新进入容器。</p>
 </li>
