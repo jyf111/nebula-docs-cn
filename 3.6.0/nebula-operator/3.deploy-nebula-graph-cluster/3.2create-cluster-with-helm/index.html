@@ -5128,13 +5128,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#nebulagraph_chart" class="md-nav__link">
-    NebulaGraph集群 Chart 配置参数说明
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -5707,13 +5700,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#nebulagraph_chart" class="md-nav__link">
-    NebulaGraph集群 Chart 配置参数说明
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -5777,9 +5763,14 @@
 <span class="w">    </span><span class="c1"># 指定NebulaGraph集群的版本。</span>
 <span class="w">    </span>--set<span class="w"> </span>nebula.version<span class="o">=</span>v3.6.0<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="c1"># 指定集群 chart 的版本，不指定则默认安装最新版本 chart。</span>
+<span class="w">    </span><span class="c1"># 执行 helm search repo nebula-operator/nebula-cluster 命令可查看所有 chart 版本。</span>
 <span class="w">    </span>--version<span class="o">=</span><span class="m">1</span>.5.0<span class="w"> </span>
 <span class="w">    </span>--namespace<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\ </span><span class="w">     </span>
 </code></pre></div>
+<p>执行<code>helm show values nebula-operator/nebula-cluster</code>命令，或者单击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/release-1.5/charts/nebula-cluster/values.yaml">nebula-cluster/values.yaml
+</a> 可查看NebulaGraph集群的所有配置参数。</p>
+<p>单击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/release-1.5/doc/user/nebula_cluster_helm_guide.md#optional-chart-parameters">Chart parameters</a> 查看可配置的集群参数的描述及默认值。</p>
+<p>通过<code>--set</code>参数设置NebulaGraph集群的配置参数，例如，<code>--set nebula.storaged.replicas=3</code>可设置NebulaGraph集群中 Storage 服务的副本数为 3。</p>
 </li>
 <li>
 <p>查看NebulaGraph集群创建状态。</p>
@@ -5798,268 +5789,6 @@
 </code></pre></div>
 <h2 id="_4">后续操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="../../4.connect-to-nebula-graph-service/">连接NebulaGraph</a></p>
-<h2 id="nebulagraph_chart">NebulaGraph集群 Chart 配置参数说明<a class="headerlink" href="#nebulagraph_chart" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">默认值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>nameOverride</code></td>
-<td align="left"><code>nil</code></td>
-<td>覆盖集群 Chart 的名称。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.version</code></td>
-<td align="left"><code>v3.5.0</code></td>
-<td>NebulaGraph的版本。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.imagePullPolicy</code></td>
-<td align="left"><code>IfNotPresent</code></td>
-<td>NebulaGraph镜像的拉取策略。关于拉取策略详情，请参考 <a href="https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy">Image pull policy</a>。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storageClassName</code></td>
-<td align="left"><code>nil</code></td>
-<td>持久存储卷的类型，默认使用 StorageClass 的名字。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.schedulerName</code></td>
-<td align="left"><code>default-scheduler</code></td>
-<td>NebulaGraph集群的调度器。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.reference</code></td>
-<td align="left"><code>{"name": "statefulsets.apps", "version": "v1"}</code></td>
-<td>为NebulaGraph引用的工作负载。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.image</code></td>
-<td align="left"><code>vesoft/nebula-graphd</code></td>
-<td>Graphd 容器镜像名称。使用<code>nebula.version</code>中的值作为版本。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.replicas</code></td>
-<td align="left"><code>2</code></td>
-<td>Graphd 服务的副本数。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.env</code></td>
-<td align="left"><code>[]</code></td>
-<td>Graphd 服务的环境变量。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.resources</code></td>
-<td align="left"><code>{"resources":{"requests":{"cpu":"500m","memory":"500Mi"},"limits":{"cpu":"1","memory":"1Gi"}}}</code></td>
-<td>Graphd 资源配置。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.logStorage</code></td>
-<td align="left"><code>500Mi</code></td>
-<td>Graphd 服务的日志盘大小。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.podLabels</code></td>
-<td align="left"><code>{}</code></td>
-<td>Graphd 服务 Pod 的标签。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.podAnnotations</code></td>
-<td align="left"><code>{}</code></td>
-<td>Graphd 服务 Pod 的注解。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.nodeSelector</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Graphd pod 设置节点标签以分配至指定的节点中。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.tolerations</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Graphd pod 设置容忍度。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.affinity</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Graphd pod 设置亲和性。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.readinessProbe</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Graphd pod 设置就绪探针以检测容器的状态。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.sidecarContainers</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Graphd pod 设置 Sidecar Containers。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.graphd.sidecarVolumes</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Graphd pod 设置 Sidecar Volumes。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.image</code></td>
-<td align="left"><code>vesoft/nebula-metad</code></td>
-<td>Metad 容器镜像名称。使用<code>nebula.version</code>中的值作为版本。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.replicas</code></td>
-<td align="left"><code>3</code></td>
-<td>Metad 服务的副本数。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.env</code></td>
-<td align="left"><code>[]</code></td>
-<td>Metad 服务的环境变量。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.resources</code></td>
-<td align="left"><code>{"resources":{"requests":{"cpu":"500m","memory":"500Mi"},"limits":{"cpu":"1","memory":"1Gi"}}}</code></td>
-<td>Metad 服务的资源配置。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.logStorage</code></td>
-<td align="left"><code>500Mi</code></td>
-<td>Metad 服务的日志盘大小。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.dataStorage</code></td>
-<td align="left"><code>1Gi</code></td>
-<td>Metad 服务的数据盘大小。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.licenseManagerURL</code></td>
-<td align="left"><code>{}</code></td>
-<td>由 License Manager 的访问地址和端口（默认端口<code>9119</code>）组成。例如，<code>192.168.8.100:9119</code>。社区版集群可忽略此参数。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.podLabels</code></td>
-<td align="left"><code>{}</code></td>
-<td>Metad 服务 Pod 的标签。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.podAnnotations</code></td>
-<td align="left"><code>{}</code></td>
-<td>Metad 服务 Pod 的注解。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.nodeSelector</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Metad pod 设置节点标签以分配至指定的节点中。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.tolerations</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Metad pod 设置容忍度。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.affinity</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Metad pod 设置亲和性。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.readinessProbe</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Metad pod 设置就绪探针以检测容器的状态。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.sidecarContainers</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Metad pod 设置 Sidecar Containers。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.metad.sidecarVolumes</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Metad pod 设置 Sidecar Volumes。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.image</code></td>
-<td align="left"><code>vesoft/nebula-storaged</code></td>
-<td>Storaged 容器镜像名称。使用<code>nebula.version</code>中的值作为版本。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.replicas</code></td>
-<td align="left"><code>3</code></td>
-<td>Storaged 服务的副本数。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.env</code></td>
-<td align="left"><code>[]</code></td>
-<td>Storaged 服务的环境变量。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.resources</code></td>
-<td align="left"><code>{"resources":{"requests":{"cpu":"500m","memory":"500Mi"},"limits":{"cpu":"1","memory":"1Gi"}}}</code></td>
-<td>Storaged 服务的资源配置。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.logStorage</code></td>
-<td align="left"><code>500Mi</code></td>
-<td>Storaged 服务的日志盘大小。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.dataStorage</code></td>
-<td align="left"><code>1Gi</code></td>
-<td>Storaged 服务的数据盘大小。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.podLabels</code></td>
-<td align="left"><code>{}</code></td>
-<td>Storaged 服务 Pod 的标签。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.podAnnotations</code></td>
-<td align="left"><code>{}</code></td>
-<td>Storaged 服务 Pod 的注解。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.nodeSelector</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Storaged pod 设置节点标签以分配至指定的节点中。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.tolerations</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Storaged pod 设置容忍度。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.affinity</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Storaged pod 设置亲和性。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.readinessProbe</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Storaged pod 设置就绪探针以检测容器的状态。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.sidecarContainers</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Storaged pod 设置 Sidecar Containers。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.storaged.sidecarVolumes</code></td>
-<td align="left"><code>{}</code></td>
-<td>为 Storaged Pod 设置 Sidecar Volumes。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.agent</code></td>
-<td align="left"><code>{}</code></td>
-<td>Agent 服务的配置。用于备份和恢复及日志清理功能，如果不自定义该配置，将使用默认配置。</td>
-</tr>
-<tr>
-<td align="left"><code>imagePullSecrets</code></td>
-<td align="left"><code>[]</code></td>
-<td>拉取私有仓库镜像的 Secret。</td>
-</tr>
-</tbody>
-</table>
 
   <hr>
 <div class="md-source-file">
