@@ -6062,6 +6062,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       #            oldColNames:[field-0,field-1,field-2]
       #            newColName:new-field
       #        }
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
 
       # 批量操作类型，包括 INSERT、UPDATE 和 DELETE。默认为 INSERT。
@@ -6160,6 +6164,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       #            oldColNames:[field-0,field-1,field-2]
       #            newColName:new-field
       #        }
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
 
       target: {
@@ -6169,6 +6177,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       #            oldColNames:[field-0,field-1,field-2]
       #            newColName:new-field
       #        }
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
 
       # 指定一个列作为 rank 的源（可选）。
@@ -6247,7 +6259,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>

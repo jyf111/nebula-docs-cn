@@ -6020,6 +6020,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       #            oldColNames:[field-0,field-1,field-2]
       #            newColName:new-field
       #        }
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
 
       # 批量操作类型，包括 INSERT、UPDATE 和 DELETE。默认为 INSERT。
@@ -6037,40 +6041,18 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
     # 设置 Tag team 相关信息。
     {
-      # 指定NebulaGraph中定义的 Tag 名称。
       name: team
       type: {
-        # 指定数据源，使用 Parquet。
         source: parquet
-
-        # 指定如何将点数据导入NebulaGraph：Client 或 SST。
         sink: client
       }
-
-      # 指定 Parquet 文件的路径。
-      # 如果文件存储在 HDFS 上，用双引号括起路径，以 hdfs://开头，例如&quot;hdfs://ip:port/xx/xx&quot;。
-      # 如果文件存储在本地，用双引号括起路径，以 file://开头，例如&quot;file:///tmp/xx.csv&quot;。
       path: &quot;hdfs://192.168.11.13:9000/data/vertex_team.parquet&quot;
-
-      # 在 fields 里指定 Parquet 文件中 key 名称，其对应的 value 会作为NebulaGraph中指定属性的数据源。
-      # 如果需要指定多个值，用英文逗号（,）隔开。
       fields: [name]
-
-      # 指定NebulaGraph中定义的属性名称。
-      # fields 与 nebula.fields 的顺序必须一一对应。
       nebula.fields: [name]
-
-      # 指定一个列作为 VID 的源。
-      # vertex 的值必须与 Parquet 文件中的字段保持一致。
-      # 目前，NebulaGraph 3.6.0仅支持字符串或整数类型的 VID。
       vertex: {
         field:id
       }
-
-      # 指定单批次写入NebulaGraph的最大点数量。
       batch: 256
-
-      # 指定 Spark 分片数量。
       partition: 32
     }
 
@@ -6113,6 +6095,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       #            oldColNames:[field-0,field-1,field-2]
       #            newColName:new-field
       #        }
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
       target: {
         field: dst
@@ -6121,6 +6107,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       #            oldColNames:[field-0,field-1,field-2]
       #            newColName:new-field
       #        }
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
 
       # 指定一个列作为 rank 的源（可选）。
@@ -6138,46 +6128,21 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
     # 设置 Edge type serve 相关信息。
     {
-      # 指定NebulaGraph中定义的 Edge type 名称。
       name: serve
       type: {
-        # 指定数据源，使用 Parquet。
         source: parquet
-
-        # 指定如何将点数据导入NebulaGraph：Client 或 SST。
         sink: client
       }
-
-      # 指定 Parquet 文件的路径。
-      # 如果文件存储在 HDFS 上，用双引号括起路径，以 hdfs://开头，例如&quot;hdfs://ip:port/xx/xx&quot;。
-      # 如果文件存储在本地，用双引号括起路径，以 file://开头，例如&quot;file:///tmp/xx.csv&quot;。
       path: &quot;hdfs://192.168.11.13:9000/data/edge_serve.parquet&quot;
-
-      # 在 fields 里指定 Parquet 文件中 key 名称，其对应的 value 会作为NebulaGraph中指定属性的数据源。
-      # 如果需要指定多个值，用英文逗号（,）隔开。
       fields: [start_year,end_year]
-
-      # 指定NebulaGraph中定义的属性名称。
-      # fields 与 nebula.fields 的顺序必须一一对应。
       nebula.fields: [start_year, end_year]
-
-      # 指定一个列作为起始点和目的点的源。
-      # vertex 的值必须与 Parquet 文件中的字段保持一致。
-      # 目前，NebulaGraph 3.6.0仅支持字符串或整数类型的 VID。
       source: {
         field: src
       }
       target: {
         field: dst
       }
-
-      # 指定一个列作为 rank 的源（可选）。
-      #ranking: _c5
-
-      # 指定单批次写入NebulaGraph的最大边数量。
       batch: 256
-
-      # 指定 Spark 分片数量。
       partition: 32
     }
 
@@ -6210,7 +6175,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>

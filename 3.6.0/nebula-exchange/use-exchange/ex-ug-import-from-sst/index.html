@@ -6182,6 +6182,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 目前，NebulaGraph 3.6.0仅支持字符串或整数类型的 VID。
       vertex: {
         field:_c0
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
 
       # 指定的分隔符。默认值为英文逗号（,）。
@@ -6190,6 +6194,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 如果 CSV 文件有表头，请将 header 设置为 true。
       # 如果 CSV 文件没有表头，请将 header 设置为 false。默认值为 false。
       header: false
+
+      # 批量操作类型，包括 INSERT、UPDATE 和 DELETE。默认为 INSERT。
+      #writeMode: INSERT
 
       # 指定单批次写入NebulaGraph的最大点数量。
       batch: 256
@@ -6203,49 +6210,21 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
     # 设置 Tag team 相关信息。
     {
-      # 指定NebulaGraph中定义的 Tag 名称。
       name: team
       type: {
-        # 指定数据源，使用 CSV。
         source: csv
-
-        # 指定如何将点数据导入NebulaGraph：Client 或 SST。
         sink: sst
       }
-
-      # 指定 CSV 文件的路径。
-      # 文件存储在 HDFS 上，用双引号括起路径，以 hdfs://开头，例如&quot;hdfs://&lt;ip/hostname&gt;:port/xx/xx.csv&quot;。
       path: &quot;hdfs://*.*.*.*:9000/dataset/vertex_team.csv&quot;
-
-      # 如果 CSV 文件没有表头，使用 [_c0, _c1, _c2, ..., _cn] 表示其表头，并将列指示为属性值的源。
-      # 如果 CSV 文件有表头，则使用实际的列名。
       fields: [_c1]
-
-      # 指定NebulaGraph中定义的属性名称。
-      # fields 与 nebula.fields 的顺序必须一一对应。
       nebula.fields: [name]
-
-      # 指定一个列作为 VID 的源。
-      # vertex 的值必须与上述 fields 或者 csv.fields 中的列名保持一致。
-      # 目前，NebulaGraph 3.6.0仅支持字符串或整数类型的 VID。
       vertex: {
         field:_c0
       }
-
-      # 指定的分隔符。默认值为英文逗号（,）。
       separator: &quot;,&quot;
-
-      # 如果 CSV 文件有表头，请将 header 设置为 true。
-      # 如果 CSV 文件没有表头，请将 header 设置为 false。默认值为 false。
       header: false
-
-      # 指定单批次写入NebulaGraph的最大点数量。
       batch: 256
-
-      # 指定 Spark 分片数量。
       partition: 32
-
-      # 生成 SST 文件时是否要基于NebulaGraph中图空间的 partition 进行数据重分区。
       repartitionWithNebula: false
     }
 
@@ -6282,9 +6261,17 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 目前，NebulaGraph 3.6.0仅支持字符串或整数类型的 VID。
       source: {
         field: _c0
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
       target: {
         field: _c1
+      # 为 VID 增加指定的前缀。例如 VID 为 12345，增加前缀 tag1 后为 tag1_12345。下划线无法修改。
+      # prefix:&quot;tag1&quot;
+      # 对 string 类型的 VID 进行哈希化操作。
+      # policy:hash
       }
 
       # 指定的分隔符。默认值为英文逗号（,）。
@@ -6298,6 +6285,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 如果 CSV 文件没有表头，请将 header 设置为 false。默认值为 false。
       header: false
 
+      # 批量操作类型，包括 INSERT、UPDATE 和 DELETE。默认为 INSERT。
+      #writeMode: INSERT
+
       # 指定单批次写入NebulaGraph的最大边数量。
       batch: 256
 
@@ -6310,55 +6300,24 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
     # 设置 Edge type serve 相关信息。
     {
-      # 指定NebulaGraph中定义的 Edge type 名称。
       name: serve
       type: {
-        # 指定数据源，使用 CSV。
         source: csv
-
-        # 指定如何将点数据导入NebulaGraph：Client 或 SST。
         sink: sst
       }
-
-      # 指定 CSV 文件的路径。
-      # 文件存储在 HDFS 上，用双引号括起路径，以 hdfs://开头，例如&quot;hdfs://&lt;ip/hostname&gt;:port/xx/xx.csv&quot;。
       path: &quot;hdfs://*.*.*.*:9000/dataset/edge_serve.csv&quot;
-
-      # 如果 CSV 文件没有表头，使用 [_c0, _c1, _c2, ..., _cn] 表示其表头，并将列指示为属性值的源。
-      # 如果 CSV 文件有表头，则使用实际的列名。
       fields: [_c2,_c3]
-
-      # 指定NebulaGraph中定义的属性名称。
-      # fields 与 nebula.fields 的顺序必须一一对应。
       nebula.fields: [start_year, end_year]
-
-      # 指定一个列作为起始点和目的点的源。
-      # vertex 的值必须与上述 fields 或者 csv.fields 中的列名保持一致。
-      # 目前，NebulaGraph 3.6.0仅支持字符串或整数类型的 VID。
       source: {
         field: _c0
       }
       target: {
         field: _c1
       }
-
-      # 指定的分隔符。默认值为英文逗号（,）。
       separator: &quot;,&quot;
-
-      # 指定一个列作为 rank 的源（可选）。
-      #ranking: _c5
-
-      # 如果 CSV 文件有表头，请将 header 设置为 true。
-      # 如果 CSV 文件没有表头，请将 header 设置为 false。默认值为 false。
       header: false
-
-      # 指定单批次写入NebulaGraph的最大边数量。
       batch: 256
-
-      # 指定 Spark 分片数量。
       partition: 32
-
-      # 生成 SST 文件时是否要基于NebulaGraph中图空间的 partition 进行数据重分区。
       repartitionWithNebula: false
     }
 
@@ -6443,7 +6402,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
       
     
   </small>
