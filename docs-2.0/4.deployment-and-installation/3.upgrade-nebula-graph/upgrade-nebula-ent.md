@@ -36,7 +36,7 @@
 
   !!! note
 
-        不同安装包的升级步骤相同。本文以 RPM 包且安装目录为`/usr/local/nebulagraph-ent-3.4`为例。具体操作请参见[安装 RPM 包](../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb.md)。 
+        不同安装包的升级步骤相同。本文以 RPM 包且安装目录为`/usr/local/nebulagraph-ent-{{nebula.release}}`为例。具体操作请参见[安装 RPM 包](../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb.md)。 
    
   !!! caution
 
