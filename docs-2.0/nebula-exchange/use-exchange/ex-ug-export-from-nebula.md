@@ -119,7 +119,7 @@ CentOS 7.9.2009
         metaAddress:"127.0.0.1:9559"
         space:"test"
         label:"person"
-        # config the fields you want to export from nebula
+        # config the fields you want to export from nebula. If you want to export all properties, you can set this parameter to empty, that is `fields: []`.
         fields: [nebula-field-0, nebula-field-1, nebula-field-2]
         noFields:false  # default false, if true, just export id
         partition: 60
@@ -142,7 +142,7 @@ CentOS 7.9.2009
         metaAddress:"127.0.0.1:9559"
         space:"test"
         label:"friend"
-        # config the fields you want to export from nebula
+        # config the fields you want to export from nebula. If you want to export all properties, you can set this parameter to empty, that is `fields: []`.
         fields: [nebula-field-0, nebula-field-1, nebula-field-2]
         noFields:false  # default false, if true, just export id
         partition: 60
