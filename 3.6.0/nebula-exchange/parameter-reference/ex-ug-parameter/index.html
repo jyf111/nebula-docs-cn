@@ -6378,6 +6378,20 @@
 <td align="left">通过自定义规则合并多列，该参数指定新列的列名。</td>
 </tr>
 <tr>
+<td align="left"><code>tags.vertex.prefix</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">为 VID 增加指定的前缀。例如 VID 为<code>12345</code>，增加前缀<code>tag1</code>后为<code>tag1_12345</code>。下划线无法修改。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.vertex.policy</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">仅支持取值<code>hash</code>。对 string 类型的 VID 进行哈希化操作。</td>
+</tr>
+<tr>
 <td align="left"><code>tags.batch</code></td>
 <td align="left">int</td>
 <td align="left"><code>256</code></td>
@@ -6983,11 +6997,39 @@
 <td align="left">边的起始点的列。例如<code>_c0</code>表示第一列的值作为边的起始点。</td>
 </tr>
 <tr>
+<td align="left"><code>edges.source.prefix</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">为 VID 增加指定的前缀。例如 VID 为<code>12345</code>，增加前缀<code>tag1</code>后为<code>tag1_12345</code>。下划线无法修改。</td>
+</tr>
+<tr>
+<td align="left"><code>edges.source.policy</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">仅支持取值<code>hash</code>。对 string 类型的 VID 进行哈希化操作。</td>
+</tr>
+<tr>
 <td align="left"><code>edges.target.field</code></td>
 <td align="left">string</td>
 <td align="left">-</td>
 <td align="left">是</td>
 <td align="left">边的目的点的列。例如<code>_c1</code>表示第二列的值作为边的目的点。</td>
+</tr>
+<tr>
+<td align="left"><code>edges.target.prefix</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">为 VID 增加指定的前缀。例如 VID 为<code>12345</code>，增加前缀<code>tag1</code>后为<code>tag1_12345</code>。下划线无法修改。</td>
+</tr>
+<tr>
+<td align="left"><code>edges.target.policy</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">仅支持取值<code>hash</code>。对 string 类型的 VID 进行哈希化操作。</td>
 </tr>
 <tr>
 <td align="left"><code>edges.ranking</code></td>
