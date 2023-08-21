@@ -6061,7 +6061,7 @@
 <li>开发工具：包括图查询语言、建模工具、开发框架和库。</li>
 </ul>
 <ul>
-<li>电子书籍<sup id="fnref:info"><a class="footnote-ref" href="#fn:info">2</a></sup>和会议等。</li>
+<li>电子书籍和会议等。</li>
 </ul>
 <!-- TODO from VLDB 2019
 ### 分类法
@@ -6074,7 +6074,7 @@
 <li>近邻查询：查询给定点或者边的邻边、邻点，或者是 K 跳的近邻。</li>
 </ul>
 <ul>
-<li>图模式匹配(Pattern matching)：找到一个/所有的子图，满足给定的图模式；这个问题非常接近于"子图同构映射(subgraph isomorphism)"——虽然两个看上去不同的图，但其实是一模一样的<sup id="fnref:subiso"><a class="footnote-ref" href="#fn:subiso">3</a></sup>。</li>
+<li>图模式匹配(Pattern matching)：找到一个/所有的子图，满足给定的图模式；这个问题非常接近于"子图同构映射(subgraph isomorphism)"——虽然两个看上去不同的图，但其实是一模一样的<sup id="fnref:subiso"><a class="footnote-ref" href="#fn:subiso">2</a></sup>。</li>
 </ul>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/samegraph.png" /></p>
 <ul>
@@ -6084,17 +6084,17 @@
 <li>分析型问题：通常与一些汇聚型算子相关（平均值、count、最大值、点的出入度），或者度量所有两两点之间的距离、某节点与其他节点之间的互动程度（介数中心性）等。</li>
 </ul>
 <h3 id="graph_databasegraph_processing">图数据库(Graph Database)与图处理(Graph processing)系统<a class="headerlink" href="#graph_databasegraph_processing" title="Permanent link">&para;</a></h3>
-<p>一个图系统通常会涉及到复杂的数据流水线<sup id="fnref:biggraph"><a class="footnote-ref" href="#fn:biggraph">4</a></sup>，从数据源(左边)到处理输出(右边)，会经过多个数据加工处理环节和系统；大的模块可以分为 ETL模块，图数据库系统(Graph OLTP)，图处理系统(Graph OLAP)，基于图引擎的应用系统（BI、知识图谱等）。</p>
+<p>一个图系统通常会涉及到复杂的数据流水线<sup id="fnref:biggraph"><a class="footnote-ref" href="#fn:biggraph">3</a></sup>，从数据源(左边)到处理输出(右边)，会经过多个数据加工处理环节和系统；大的模块可以分为 ETL模块，图数据库系统(Graph OLTP)，图处理系统(Graph OLAP)，基于图引擎的应用系统（BI、知识图谱等）。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/graphpipe.png" /></p>
 <p>虽然这两类系统都是与图数据和图技术相关的系统，也处理类似的目标，但是他们有着不同的起源和特长（及弱点）：</p>
 <ul>
 <li>（在线）图数据库目标是图的持久化存储管理、高效的子图操作。硬盘（及网络）是目标运行设备，物理/逻辑数据映射，数据完整性和（故障）一致性是主要目标。每一个请求通常只会涉及到全图的一小部分，通常可以在一台服务器上完成；单个请求时延通常在毫秒到秒级别，请求并发量通常在几千到几十万。早期的 Neo4j 是图数据库领域的起源之一。</li>
 </ul>
 <ul>
-<li>（离线）图处理系统目标是全图的大批量、并行、迭代、处理与分析，内存（及网络）是目标运行设备。每一个请求会涉及到所有的图节点，需要所有的服务器参与完成；单个请求的时延通常在分钟到小时（天），请求并发量通常为个位数。Google 的 Pregel<sup id="fnref:Pregel"><a class="footnote-ref" href="#fn:Pregel">5</a></sup> 是图处理系统的典型起源代表，它的点中心编程抽象与BSP的运行模式构成的编程范式，相比之前 Hadoop Map-Reduce 是更为图友好的 API 抽象。</li>
+<li>（离线）图处理系统目标是全图的大批量、并行、迭代、处理与分析，内存（及网络）是目标运行设备。每一个请求会涉及到所有的图节点，需要所有的服务器参与完成；单个请求的时延通常在分钟到小时（天），请求并发量通常为个位数。Google 的 Pregel<sup id="fnref:Pregel"><a class="footnote-ref" href="#fn:Pregel">4</a></sup> 是图处理系统的典型起源代表，它的点中心编程抽象与BSP的运行模式构成的编程范式，相比之前 Hadoop Map-Reduce 是更为图友好的 API 抽象。</li>
 </ul>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/databaseandprocess.png" />
-<sup id="fnref:iga"><a class="footnote-ref" href="#fn:iga">6</a></sup></p>
+<sup id="fnref:iga"><a class="footnote-ref" href="#fn:iga">5</a></sup></p>
 <h3 id="_12">图的分片方式<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>对于一个大规模的图数据来说，是很难存放在单个服务器的内存中的，即使仅仅存放图结构本身也不够。而且通过增加单服务器的能力，其成本价格通常成指数级别上升。
 此外，随着数据量的增加，例如到达千亿级别的时候，已经超过了市面上所有商用服务器的容量能力。</p>
@@ -6102,7 +6102,7 @@
 <p>但是图这种数据结构的分片通常不那么直观，这是因为通常图是“全联通”的，每个点通常只要6跳就可以联通到其他任何节点；
 而理论上早已证明图的划分问题是 NP 的。
 与此同时，当把整个图数据分散到多个服务器时，跨服务器的网络访问时延10倍于同一个服务器内部的硬件(内存)访问时间；因此对于一些深度优先遍历的场景，会发生大量的跨网络访问，导致整体时延极高。</p>
-<p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/lessrpc.png" /><sup id="fnref:gpml"><a class="footnote-ref" href="#fn:gpml">7</a></sup></p>
+<p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/lessrpc.png" /><sup id="fnref:gpml"><a class="footnote-ref" href="#fn:gpml">6</a></sup></p>
 <p>另一方面，通常图有着明显的幂律分布；少量节点的邻边稠密程度远大于平均的节点，虽然处理这些节点通常可以在同一台服务器内，减少了跨网络访问，但这也意味着这些服务器压力会远大于平均。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/Power_Law_Distribution.png" /></p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/singleserver.png" /></p>
@@ -6118,12 +6118,12 @@
 <li>增加（只读）副本或视图 (View)：为部分图分片增加只读的副本或者建立一个视图，将较重的读请求负载通过这些分片服务器承担。 </li>
 </ul>
 <ul>
-<li>进行细颗粒度的图划分：例如将点和边组成多个小分片（Partition），而不是一台服务器一个大分片（Sharding)，再将关联性较强的 Partition 尽量放置在同一个服务器上<sup id="fnref:arr"><a class="footnote-ref" href="#fn:arr">8</a></sup>。 </li>
+<li>进行细颗粒度的图划分：例如将点和边组成多个小分片（Partition），而不是一台服务器一个大分片（Sharding)，再将关联性较强的 Partition 尽量放置在同一个服务器上<sup id="fnref:arr"><a class="footnote-ref" href="#fn:arr">7</a></sup>。 </li>
 </ul>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/smartgraph.png" /></p>
 <p>具体工程实践时，也会混合使用上述几种方式。通常，离线的图处理系统会通过一个ETL过程，将图进行一定程度的预处理以提高局部性；而在线图数据库系统通常会选择周期性的数据再平衡过程来提高数据局部性。</p>
 <h3 id="_13">一些技术上的挑战<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>在文献<sup id="fnref:Ubiquity"><a class="footnote-ref" href="#fn:Ubiquity">9</a></sup>中，对于无处不在的大图和挑战做了详尽的调研，下面是其列出的十大图技术挑战：</p>
+<p>在文献<sup id="fnref:Ubiquity"><a class="footnote-ref" href="#fn:Ubiquity">8</a></sup>中，对于无处不在的大图和挑战做了详尽的调研，下面是其列出的十大图技术挑战：</p>
 <ul>
 <li>可扩展性(软件可以处理更大的图规模): 包括大图的加载、更新、图计算和图遍历，触发器，超级节点；</li>
 <li>可视化：可定制布局，大图的渲染，多层次展示，动态（更新）的展示</li>
@@ -6144,29 +6144,29 @@
 <p>下面是一些推荐的单机图库，也可以集成在你的应用程序里面。</p>
 </div>
 <ul>
-<li>JGraphT<sup id="fnref:JGraphT"><a class="footnote-ref" href="#fn:JGraphT">10</a></sup>: 一个知名的开源 Java 图论库(library)，其实现了相当多的高效图算法。</li>
+<li>JGraphT<sup id="fnref:JGraphT"><a class="footnote-ref" href="#fn:JGraphT">9</a></sup>: 一个知名的开源 Java 图论库(library)，其实现了相当多的高效图算法。</li>
 </ul>
 <ul>
-<li>JUNG<sup id="fnref:JUNG"><a class="footnote-ref" href="#fn:JUNG">11</a></sup>是BSD许可下用Java编写的开源图建模和可视化框架。该框架内置了许多布局算法，以及诸如图聚类和节点中心性度量之类的分析算法。</li>
+<li>JUNG<sup id="fnref:JUNG"><a class="footnote-ref" href="#fn:JUNG">10</a></sup>是BSD许可下用Java编写的开源图建模和可视化框架。该框架内置了许多布局算法，以及诸如图聚类和节点中心性度量之类的分析算法。</li>
 </ul>
 <ul>
-<li>igraph<sup id="fnref:igraph"><a class="footnote-ref" href="#fn:igraph">12</a></sup>: 一个轻量且功能强大的 Library, 支持R、python、C</li>
+<li>igraph<sup id="fnref:igraph"><a class="footnote-ref" href="#fn:igraph">11</a></sup>: 一个轻量且功能强大的 Library, 支持R、python、C</li>
 </ul>
 <ul>
-<li>NetworkX<sup id="fnref:NetworkX"><a class="footnote-ref" href="#fn:NetworkX">13</a></sup>: 数据科学家做图论分析第一选择， python。</li>
+<li>NetworkX<sup id="fnref:NetworkX"><a class="footnote-ref" href="#fn:NetworkX">12</a></sup>: 数据科学家做图论分析第一选择， python。</li>
 </ul>
 <ul>
-<li>Cytoscape<sup id="fnref:Cytoscape"><a class="footnote-ref" href="#fn:Cytoscape">14</a></sup>: 功能强大的可视化开源图分析工具。</li>
+<li>Cytoscape<sup id="fnref:Cytoscape"><a class="footnote-ref" href="#fn:Cytoscape">13</a></sup>: 功能强大的可视化开源图分析工具。</li>
 </ul>
 <ul>
-<li>Gephi<sup id="fnref:Gephi"><a class="footnote-ref" href="#fn:Gephi">15</a></sup>: 功能强大的可视化开源图分析工具。</li>
+<li>Gephi<sup id="fnref:Gephi"><a class="footnote-ref" href="#fn:Gephi">14</a></sup>: 功能强大的可视化开源图分析工具。</li>
 </ul>
 <ul>
-<li>arrows.app<sup id="fnref:Arrow"><a class="footnote-ref" href="#fn:Arrow">16</a></sup>： 非常简单的脑图工具，用于可视化生成 Cypher 语句.</li>
+<li>arrows.app<sup id="fnref:Arrow"><a class="footnote-ref" href="#fn:Arrow">15</a></sup>： 非常简单的脑图工具，用于可视化生成 Cypher 语句.</li>
 </ul>
 <h3 id="benchmark">一些行业数据集和 Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">&para;</a></h3>
 <h4 id="ldbc">LDBC<a class="headerlink" href="#ldbc" title="Permanent link">&para;</a></h4>
-<p>关联数据基准委员会（LDBC<sup id="fnref:LDBC"><a class="footnote-ref" href="#fn:LDBC">17</a></sup>，Linked Data Benchmark Council）是由Oracle、Intel等软硬件巨头和主流图数据库厂商Neo4j和TigerGraph等组成的非赢利机构，是图的基准指南制定者与测试结果发布机构，在行业内有着很高的影响力。</p>
+<p>关联数据基准委员会（LDBC<sup id="fnref:LDBC"><a class="footnote-ref" href="#fn:LDBC">16</a></sup>，Linked Data Benchmark Council）是由Oracle、Intel等软硬件巨头和主流图数据库厂商Neo4j和TigerGraph等组成的非赢利机构，是图的基准指南制定者与测试结果发布机构，在行业内有着很高的影响力。</p>
 <p>社交网络基准测试（SNB，Social Network Benchmark）是由关联数据基准委员会（LDBC）开发的面向图数据库的基准测试（Benchmark）之一，分为交互式查询（Interactive）和商业智能（BI）两个场景。其作用类似于 TPC-C, TPC-H 等测试在 SQL 型数据库中的功能，可以帮助用户比较多种图数据库产品的功能、性能、容量。</p>
 <p>SNB 数据集模拟一个社交网络的人、发帖之间的关系，考虑了社交网络的分布属性、人的活跃度等等社交信息。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/ldbc.png" /></p>
@@ -6176,12 +6176,12 @@
 <h3 id="_16">虽然图的各种技术起源和目标并不相同，但在相互借鉴和融合<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/convergenceofcapability.png" /></p>
 <h3 id="_17">上云的趋势在加速，对于弹性能力提出更高要求<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<p>根据 Gartner 的预计，云服务一直保持较快的增速和渗透率<sup id="fnref:cl"><a class="footnote-ref" href="#fn:cl">18</a></sup>。大量的商业软件，正在从 10 年前完全私有本地逐步转向基于云服务的商业模式。
+<p>根据 Gartner 的预计，云服务一直保持较快的增速和渗透率<sup id="fnref:cl"><a class="footnote-ref" href="#fn:cl">17</a></sup>。大量的商业软件，正在从 10 年前完全私有本地逐步转向基于云服务的商业模式。
 云服务的一大优点是其提供了近乎无限的弹性能力；这也要求各种基于云基础设施的软件必须有更好的快速弹性扩缩容能力。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/cloudtrends.png" /></p>
 <h3 id="ssd">硬件趋势，SSD 将成为主流的持久化设备<a class="headerlink" href="#ssd" title="Permanent link">&para;</a></h3>
 <p>硬件决定了软件的架构——从发现摩尔定律的 50 年代到进入多核的 00 年代，硬件发展趋势和速度一直深刻的决定了软件的架构。数据库类系统大多围绕“硬盘+内存”设计，高性能计算型系统大多围绕“内存 + CPU”设计，分布式系统面对千兆、万兆和 RDMA 网卡的设计也完全不同。</p>
-<p>图基于拓扑的遍历有着极其明显的随机访问特点，因此大多数早期图数据库系统都采用了“大内存 + HDD” 的架构————通过设计<strong>常驻</strong>在内存中的一些数据结构（例如B+树、Hash表等），在内存中实现随机访问目的，以优化图的拓扑遍历，再将这些随机访问转换成 HDD 所适合的顺序读写。整套软件的架构（包括存储和计算层）都必须基于和围绕这样的 IO 流程来展开。随着 SSD 价格的快速下降<sup id="fnref:ssdhdd"><a class="footnote-ref" href="#fn:ssdhdd">19</a></sup>，SSD 正在替代 HDD 成为持久化设备的主流。SSD 随机访问友好、IO 队列深、按块存取的特点与 HDD 高度顺序、随机时延极高、磁道易损坏的访问特点有着明显的不同。全部的软件架构也需要重新设计，这成为沉重的历史技术负担。</p>
+<p>图基于拓扑的遍历有着极其明显的随机访问特点，因此大多数早期图数据库系统都采用了“大内存 + HDD” 的架构————通过设计<strong>常驻</strong>在内存中的一些数据结构（例如B+树、Hash表等），在内存中实现随机访问目的，以优化图的拓扑遍历，再将这些随机访问转换成 HDD 所适合的顺序读写。整套软件的架构（包括存储和计算层）都必须基于和围绕这样的 IO 流程来展开。随着 SSD 价格的快速下降<sup id="fnref:ssdhdd"><a class="footnote-ref" href="#fn:ssdhdd">18</a></sup>，SSD 正在替代 HDD 成为持久化设备的主流。SSD 随机访问友好、IO 队列深、按块存取的特点与 HDD 高度顺序、随机时延极高、磁道易损坏的访问特点有着明显的不同。全部的软件架构也需要重新设计，这成为沉重的历史技术负担。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/ssdhdd.png" /></p>
 <div class="footnote">
 <hr />
@@ -6189,59 +6189,56 @@
 <li id="fn:lan">
 <p>https://graphaware.com/graphaware/2020/02/17/graph-technology-landscape-2020.html&#160;<a class="footnote-backref" href="#fnref:lan" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:info">
-<p>学习目的(非商业用途)可以联系[作者]((mailto:min.wu@vesoft.com)获取电子版。&#160;<a class="footnote-backref" href="#fnref:info" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
 <li id="fn:subiso">
-<p>https://en.wikipedia.org/wiki/Graph_isomorphism&#160;<a class="footnote-backref" href="#fnref:subiso" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>https://en.wikipedia.org/wiki/Graph_isomorphism&#160;<a class="footnote-backref" href="#fnref:subiso" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:biggraph">
-<p>The Future is Big Graphs! A Community View on Graph Processing Systems. https://arxiv.org/abs/2012.06171&#160;<a class="footnote-backref" href="#fnref:biggraph" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>The Future is Big Graphs! A Community View on Graph Processing Systems. https://arxiv.org/abs/2012.06171&#160;<a class="footnote-backref" href="#fnref:biggraph" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Pregel">
-<p>G. Malewicz, M. H. Austern, A. J. Bik, J. C. Dehnert, I. Horn, N. Leiser, and G. Czajkowski. Pregel: a system for large-scale graph processing. In Proceedings of the International Conference on Management of data (SIGMOD), pages 135–146, New York, NY, USA, 2010. ACM&#160;<a class="footnote-backref" href="#fnref:Pregel" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>G. Malewicz, M. H. Austern, A. J. Bik, J. C. Dehnert, I. Horn, N. Leiser, and G. Czajkowski. Pregel: a system for large-scale graph processing. In Proceedings of the International Conference on Management of data (SIGMOD), pages 135–146, New York, NY, USA, 2010. ACM&#160;<a class="footnote-backref" href="#fnref:Pregel" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:iga">
-<p>https://neo4j.com/graphacademy/training-iga-40/02-iga-40-overview-of-graph-algorithms/&#160;<a class="footnote-backref" href="#fnref:iga" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>https://neo4j.com/graphacademy/training-iga-40/02-iga-40-overview-of-graph-algorithms/&#160;<a class="footnote-backref" href="#fnref:iga" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:gpml">
-<p>https://livebook.manning.com/book/graph-powered-machine-learning/welcome/v-8/&#160;<a class="footnote-backref" href="#fnref:gpml" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>https://livebook.manning.com/book/graph-powered-machine-learning/welcome/v-8/&#160;<a class="footnote-backref" href="#fnref:gpml" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:arr">
-<p>https://www.arangodb.com/learn/graphs/using-smartgraphs-arangodb/&#160;<a class="footnote-backref" href="#fnref:arr" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>https://www.arangodb.com/learn/graphs/using-smartgraphs-arangodb/&#160;<a class="footnote-backref" href="#fnref:arr" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Ubiquity">
-<p>https://arxiv.org/abs/1709.03188&#160;<a class="footnote-backref" href="#fnref:Ubiquity" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+<p>https://arxiv.org/abs/1709.03188&#160;<a class="footnote-backref" href="#fnref:Ubiquity" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 <li id="fn:JGraphT">
-<p>https://jgrapht.org/&#160;<a class="footnote-backref" href="#fnref:JGraphT" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p>https://jgrapht.org/&#160;<a class="footnote-backref" href="#fnref:JGraphT" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="fn:JUNG">
-<p>https://github.com/jrtom/jung&#160;<a class="footnote-backref" href="#fnref:JUNG" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+<p>https://github.com/jrtom/jung&#160;<a class="footnote-backref" href="#fnref:JUNG" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 <li id="fn:igraph">
-<p>https://igraph.org/&#160;<a class="footnote-backref" href="#fnref:igraph" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+<p>https://igraph.org/&#160;<a class="footnote-backref" href="#fnref:igraph" title="Jump back to footnote 11 in the text">&#8617;</a></p>
 </li>
 <li id="fn:NetworkX">
-<p>https://networkx.org/&#160;<a class="footnote-backref" href="#fnref:NetworkX" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+<p>https://networkx.org/&#160;<a class="footnote-backref" href="#fnref:NetworkX" title="Jump back to footnote 12 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Cytoscape">
-<p>https://cytoscape.org/&#160;<a class="footnote-backref" href="#fnref:Cytoscape" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+<p>https://cytoscape.org/&#160;<a class="footnote-backref" href="#fnref:Cytoscape" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Gephi">
-<p>https://gephi.org/&#160;<a class="footnote-backref" href="#fnref:Gephi" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+<p>https://gephi.org/&#160;<a class="footnote-backref" href="#fnref:Gephi" title="Jump back to footnote 14 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Arrow">
-<p>https://arrows.app/&#160;<a class="footnote-backref" href="#fnref:Arrow" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+<p>https://arrows.app/&#160;<a class="footnote-backref" href="#fnref:Arrow" title="Jump back to footnote 15 in the text">&#8617;</a></p>
 </li>
 <li id="fn:LDBC">
-<p>https://github.com/ldbc/ldbc_snb_docs&#160;<a class="footnote-backref" href="#fnref:LDBC" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+<p>https://github.com/ldbc/ldbc_snb_docs&#160;<a class="footnote-backref" href="#fnref:LDBC" title="Jump back to footnote 16 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cl">
-<p>https://cloudcomputing-news.net/news/2019/apr/15/public-cloud-soaring-to-331b-by-2022-according-to-gartner/&#160;<a class="footnote-backref" href="#fnref:cl" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+<p>https://cloudcomputing-news.net/news/2019/apr/15/public-cloud-soaring-to-331b-by-2022-according-to-gartner/&#160;<a class="footnote-backref" href="#fnref:cl" title="Jump back to footnote 17 in the text">&#8617;</a></p>
 </li>
 <li id="fn:ssdhdd">
-<p>https://blocksandfiles.com/2021/01/25/wikibon-ssds-vs-hard-drives-wrights-law/&#160;<a class="footnote-backref" href="#fnref:ssdhdd" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+<p>https://blocksandfiles.com/2021/01/25/wikibon-ssds-vs-hard-drives-wrights-law/&#160;<a class="footnote-backref" href="#fnref:ssdhdd" title="Jump back to footnote 18 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -6251,7 +6248,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
       
     
   </small>
