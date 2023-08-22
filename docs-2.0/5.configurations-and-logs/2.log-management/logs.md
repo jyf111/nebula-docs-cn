@@ -74,3 +74,7 @@ $ curl -X PUT -H "Content-Type: application/json" -d '{"minloglevel":0,"v":3}' "
 ## RocksDB 运行日志
 
 RocksDB 的运行日志通常在 `/usr/local/nebula/data/storage/nebula/$id/data/LOG`, 其中 `$id` 为实例号。该日志通常用于调试 RocksDB 参数。
+
+## 回收日志
+
+运行日志文件过大时如何回收日志，请参见[常见问题](../../20.appendix/0.FAQ.md)。
