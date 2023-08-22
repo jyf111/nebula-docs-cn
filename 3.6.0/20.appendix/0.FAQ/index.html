@@ -6611,7 +6611,7 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <p>NebulaGraph的运行日志默认在 <code>/usr/local/nebula/logs/</code> 下，正常 INFO 级别日志文件为 <code>nebula-graphd.INFO, nebula-storaged.INFO, nebula-metad.INFO</code>，报警和错误级别后缀为 <code>.WARNING</code> 和 <code>.ERROR</code>。</p>
 <p>NebulaGraph使用 <a href="https://github.com/google/glog">glog</a> 打印日志。glog 没有日志回收的功能，用户可以：</p>
 <ul>
-<li>使用 crontab 设置定期任务回收日志文件，详情请参见 <a href="https://github.com/google/glog/issues/423">Glog should delete old log files automatically</a>。</li>
+<li>在三种服务的配置文件内添加参数<code>timestamp_in_logfile_name=true</code>（日志文件添加时间戳）和<code>max_log_size=500</code>（日志大小限制，单位 MB），然后使用 crontab 设置定期任务回收日志文件。详情请参见 <a href="https://github.com/google/glog/issues/423">Glog should delete old log files automatically</a>。</li>
 <li>使用 <a href="https://github.com/logrotate/logrotate">logrotate</a> 实现<a href="https://discuss.nebula-graph.com.cn/t/topic/7803">日志轮询</a>。使用 logrotate 管理日志前需修改相应NebulaGraph服务的配置，将<code>timestamp_in_logfile_name</code>参数的值改成<code>false</code>。</li>
 </ul>
 <h3 id="nebulagraph_1">如何查看NebulaGraph版本<a class="headerlink" href="#nebulagraph_1" title="Permanent link">&para;</a></h3>
