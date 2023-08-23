@@ -1463,6 +1463,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#typeid" class="md-nav__link">
+    typeid()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#src" class="md-nav__link">
     src()
   </a>
@@ -5937,6 +5944,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#typeid" class="md-nav__link">
+    typeid()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#src" class="md-nav__link">
     src()
   </a>
@@ -6241,6 +6255,27 @@
 | &quot;follow&quot; |
 +----------+
 </code></pre></div>
+<h3 id="typeid">typeid()<a class="headerlink" href="#typeid" title="Permanent link">&para;</a></h3>
+<p>typeid() 返回边的 Edge type 的内部 ID 值，可以用正负来判断方向。</p>
+<p>语法：<code>typeid(&lt;edge&gt;)</code></p>
+<ul>
+<li>返回类型：int。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player)-[e:follow]-(v2) RETURN e,typeid(e), \
+        CASE WHEN typeid(e) &gt; 0 \
+        THEN &quot;正向&quot; ELSE &quot;反向&quot; END AS direction \
+        LIMIT 5;
++----------------------------------------------------+-----------+-----------+
+| e                                                  | typeid(e) | direction |
++----------------------------------------------------+-----------+-----------+
+| [:follow &quot;player127&quot;-&gt;&quot;player114&quot; @0 {degree: 90}] | 5         | &quot;正向&quot;    |
+| [:follow &quot;player127&quot;-&gt;&quot;player148&quot; @0 {degree: 70}] | 5         | &quot;正向&quot;    |
+| [:follow &quot;player148&quot;-&gt;&quot;player127&quot; @0 {degree: 80}] | -5        | &quot;反向&quot;    |
+| [:follow &quot;player147&quot;-&gt;&quot;player136&quot; @0 {degree: 90}] | 5         | &quot;正向&quot;    |
+| [:follow &quot;player136&quot;-&gt;&quot;player147&quot; @0 {degree: 90}] | -5        | &quot;反向&quot;    |
++----------------------------------------------------+-----------+-----------+
+</code></pre></div>
 <h3 id="src">src()<a class="headerlink" href="#src" title="Permanent link">&para;</a></h3>
 <p>src() 返回边的起始点 ID。</p>
 <p>语法：<code>src(&lt;edge&gt;)</code></p>
@@ -6372,7 +6407,7 @@ none_direct_dst() 返回的是不指定边方向的的终点 ID，而是指定�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2023</span>
       
     
   </small>
