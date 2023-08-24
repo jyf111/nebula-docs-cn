@@ -23,7 +23,7 @@ FROM <first_table> INNER JOIN <second_table> ON <join_condition>
 - 使用`FROM`子句指定要连接的两个表。
 - `INNER JOIN`子句必须包含`ON`子句，`ON`子句指定了连接条件，并且连接条件只支持等值连接（即`==`）。
 - `<first_table>`和`<second_table>`是要连接的两个表，两表名不能相同。
-- 使用自定义变量来指定表名。详情参见[使用自定义变量](../3.ngql-guide/4.variable-and-composite-queries/2.user-defined-variables.md)。
+- 使用自定义变量来指定表名。详情参见[使用自定义变量](../4.variable-and-composite-queries/2.user-defined-variables.md)。
 
 ## 使用示例
 
