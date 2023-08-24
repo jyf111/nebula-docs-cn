@@ -5694,6 +5694,10 @@
 <span class="w">  </span><span class="c1"># 用于决定客户端在建立 TLS 连接时，是否验证服务器端的证书链和主机名。</span>
 <span class="w">  </span><span class="nt">insecureSkipVerify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span>
 </code></pre></div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>在设置<code>insecureSkipVerify</code>为<code>false</code>时，确保服务端证书中的<code>subjectAltName</code>字段包含服务端的主机名或 IP 地址。如果服务端证书中的<code>subjectAltName</code>字段不包含服务端的主机名或 IP 地址，客户端在建立 TLS 连接时会报错。</p>
+</div>
 <p>当证书接近到期时，可以通过安装 <a href="https://cert-manager.io/docs/installation/supported-releases/">cert-manager</a> 自动更新 Secret。NebulaGraph会监听证书目录文件的变化，一旦检测到文件变动，便会将新的证书内容加载到内存中。</p>
 <h2 id="_3">加密策略<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>NebulaGraph提供了三种加密策略，用户可以根据自己的需求来选择和配置。</p>
