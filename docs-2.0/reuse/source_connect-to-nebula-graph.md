@@ -1,4 +1,4 @@
-本文介绍如何使用原生命令行客户端 Nebula Console 连接{{nebula.name}}。
+本文介绍如何使用原生命令行客户端 NebulaGraph Console 连接{{nebula.name}}。
 
 <!--本文中的链接必须用外链，因为这篇文档是复用的，用内部链接会出错。-->
 
@@ -12,17 +12,17 @@
 
 - {{nebula.name}}服务已[启动](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/manage-service/)。
 
-- 运行 Nebula Console 的机器和运行{{nebula.name}}的服务器网络互通。
+- 运行 NebulaGraph Console 的机器和运行{{nebula.name}}的服务器网络互通。
 
-- Nebula Console 的版本兼容{{nebula.name}}的版本。
+- NebulaGraph Console 的版本兼容{{nebula.name}}的版本。
 
   !!! note
   
-        版本相同的 Nebula Console 和{{nebula.name}}兼容程度最高，版本不同的 Nebula Console 连接{{nebula.name}}时，可能会有兼容问题，或者无法连接并报错`incompatible version between client and server`。
+        版本相同的 NebulaGraph Console 和{{nebula.name}}兼容程度最高，版本不同的 NebulaGraph Console 连接{{nebula.name}}时，可能会有兼容问题，或者无法连接并报错`incompatible version between client and server`。
 
 ## 操作步骤
 
-1. 在 Nebula Console [下载页面](https://github.com/vesoft-inc/nebula-console/releases "the nebula-console Releases page")，确认需要的版本，单击 **Assets**。
+1. 在 NebulaGraph Console [下载页面](https://github.com/vesoft-inc/nebula-console/releases "the nebula-console Releases page")，确认需要的版本，单击 **Assets**。
 
   !!! note
 
@@ -37,7 +37,7 @@
 
         在 Windows 系统中，请重命名为`nebula-console.exe`。
 
-4. 在运行 Nebula Console 的机器上执行如下命令，为用户授予 nebula-console 文件的执行权限。
+4. 在运行 NebulaGraph Console 的机器上执行如下命令，为用户授予 nebula-console 文件的执行权限。
 
   !!! note
 
