@@ -5739,7 +5739,7 @@
 <p>用户可在配置文件<code>nebula-graphd.conf</code>中添加<code>num_operator_threads</code>参数提高<code>FIND PATH</code>的查询性能。<code>num_operator_threads</code>的取值为<code>2</code>~<code>10</code>，该值不能超过 Graph 服务所在机器的 CPU 核心个数，建议设置为 Graph 服务所在机器的 CPU 核心个数。关于配置文件的详细信息，参见 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>。</p>
 </div>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>FIND { SHORTEST | SINGLE SHORTEST | ALL | NOLOOP } PATH [WITH PROP] FROM &lt;vertex_id_list&gt; TO &lt;vertex_id_list&gt;
+<div class="highlight"><pre><span></span><code>FIND { SHORTEST | ALL | NOLOOP } PATH [WITH PROP] FROM &lt;vertex_id_list&gt; TO &lt;vertex_id_list&gt;
 OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] 
 [&lt;WHERE clause&gt;] [UPTO &lt;N&gt; {STEP|STEPS}] 
 YIELD path as &lt;alias&gt;
@@ -5750,9 +5750,6 @@ YIELD path as &lt;alias&gt;
 </code></pre></div>
 <ul>
 <li><code>SHORTEST</code>：查找所有最短路径。</li>
-</ul>
-<ul>
-<li><code>SINGLE SHORTEST</code>：查找所有最短路径，随机返回其中一条。</li>
 </ul>
 <ul>
 <li><code>ALL</code>：查找所有路径。</li>
@@ -5864,7 +5861,7 @@ YIELD path as &lt;alias&gt;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 31, 2023</span>
       
     
   </small>
