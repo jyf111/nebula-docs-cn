@@ -375,9 +375,9 @@ sources:
 |`sources.edges.dst.id.index`   |-| 是 | 边上终点 VID 对应的数据文件中的列号。         |  
 |`sources.edges.rank.index`   |-| 否 | 边上 RANK 对应的数据文件中的列号。         |  
 |`sources.edges.ignoreExistedIndex`   |`true`| 否 | 是否启用`IGNORE_EXISTED_INDEX`，即插入点后不更新索引。         |  
-|`sources.edges.props.name`   |-| 是 | 边上属性的名称，必须与数据库中的属性相同。         |  
+|`sources.edges.props.name`   |-| 否 | 边上属性的名称，必须与数据库中的属性相同。         |  
 |`sources.edges.props.type`   |`STRING`| 否 | 边上属性的数据类型。目前支持`BOOL`、`INT`、`FLOAT`、`DOUBLE`、`STRING`、`TIME`、`TIMESTAMP`、`DATE`、`DATETIME`、`GEOGRAPHY`、`GEOGRAPHY(POINT)`、`GEOGRAPHY(LINESTRING)`、`GEOGRAPHY(POLYGON)`。         |  
-|`sources.edges.props.index`   |-| 是 | 属性值对应的数据文件中的列号。         |  
+|`sources.edges.props.index`   |-| 否 | 属性值对应的数据文件中的列号。         |  
 |`sources.edges.props.nullable`   |-| 否 | 属性是否可以为`NULL`，可选`true`或者`false`。         |  
 |`sources.edges.props.nullValue`   |-| 否 | `nullable`设置为`true`时，属性的值与`nullValue`相等则将该属性值设置为`NULL`。         |  
 |`sources.edges.props.defaultValue`   |-| 否 | 当`nullable`为`false`时忽略。根据`index`和`alternativeIndices`获取的所有值为`nullValue`时设置默认值。         |  
