@@ -6973,14 +6973,74 @@
 </ul>
 <h3 id="webhook">Webhook<a class="headerlink" href="#webhook" title="Permanent link">&para;</a></h3>
 <p>悦数运维监控支持用户配置 Webhook 将所有集群的告警消息接入第三方项目中。</p>
-<p>在<strong>平台设置</strong>页面的左侧导航栏中，单击<strong>通知设置</strong>-&gt;<strong>Webhook</strong>，填入接收告警消息的 <strong>Webhook URL</strong> 和<strong>Webhook请求体body</strong>（可选）。用户也可在页面右上方开启和关闭 Webhook 功能。</p>
+<p>在<strong>平台设置</strong>页面的左侧导航栏中，单击<strong>通知设置</strong>-&gt;<strong>Webhook</strong>，填入接收告警消息的 <strong>Webhook URL</strong> 和<strong>Webhook请求体body</strong>。用户也可在页面右上方开启和关闭 Webhook 功能。</p>
+<p>支持的变量如下。</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>${cluster.name}</code></td>
+<td>集群名称。</td>
+</tr>
+<tr>
+<td><code>${cluster.id}</code></td>
+<td>集群 ID。</td>
+</tr>
+<tr>
+<td><code>${cluster.version}</code></td>
+<td>集群版本。</td>
+</tr>
+<tr>
+<td><code>${cluster.status}</code></td>
+<td>集群当前状态。</td>
+</tr>
+<tr>
+<td><code>${cluster.owner}</code></td>
+<td>拥有集群 Owner 角色权限的账号名称。</td>
+</tr>
+<tr>
+<td><code>${alert.labels.instance}</code></td>
+<td>服务的 IP 地址和端口。</td>
+</tr>
+<tr>
+<td><code>${alert.labels.instanceName}</code></td>
+<td>服务名称。例如<code>192.168.10.100-graphd-9669</code>。</td>
+</tr>
+<tr>
+<td><code>${alert.labels.alertname}</code></td>
+<td>告警名称。</td>
+</tr>
+<tr>
+<td><code>${alert.labels.severity}</code></td>
+<td>告警严重级别。</td>
+</tr>
+<tr>
+<td><code>${alert.labels.componentType}</code></td>
+<td>告警服务类型。</td>
+</tr>
+<tr>
+<td><code>${alert.annotations.summary}</code></td>
+<td>告警摘要。</td>
+</tr>
+<tr>
+<td><code>${alert.annotations.description}</code></td>
+<td>告警消息描述。</td>
+</tr>
+</tbody>
+</table>
+<p>关于告警的更多信息，请参见<a href="../../4.cluster-operator/9.notification/">通知</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 5, 2023</span>
       
     
   </small>
