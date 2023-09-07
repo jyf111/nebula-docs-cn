@@ -6094,7 +6094,7 @@ NebulaGraph<span class="w"> </span>Studio<span class="w"> </span>started<span cl
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/usr/local/nebula-graph-studio/scripts/rpm/stop.sh
 </code></pre></div></li>
 </ul>
-<p>如果启动服务时遇到报错报错 <code>ERROR: bind EADDRINUSE 0.0.0.0:7001</code>，用户可以通过以下命令查看端口 7001 是否被占用。
+<p>如果启动服务时遇到报错 <code>ERROR: bind EADDRINUSE 0.0.0.0:7001</code>，用户可以通过以下命令查看端口 7001 是否被占用。
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsof<span class="w"> </span>-i:7001
 </code></pre></div></p>
 <p>如果端口被占用，且无法结束该端口上进程，用户可以修改 studio 配置内的启动端口，并重新启动服务。
