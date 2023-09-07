@@ -5705,7 +5705,7 @@
 
 
 <h1 id="operator_nebulagraph">通过 Operator 连接NebulaGraph<a class="headerlink" href="#operator_nebulagraph" title="Permanent link">&para;</a></h1>
-<p>使用 NebulaGraph Operator 创建NebulaGraph 集群后，用户可在NebulaGraph集群内部访问NebulaGraph，也可在集群外访问NebulaGraph。如果用户在集群内部，可以通过访问集群内的虚拟 IP 地址（ClusterIP）访问数据库。而如果用户在集群外部，则需要使用集群节点的公共 IP 地址或者通过部署 Nginx Ingress 控制器来访问NebulaGraph。IP 地址类型可以在创建集群的配置文件中，通过<code>spec.graphd.service</code>指定。关于 Service 的更多信息，参考<a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a>。</p>
+<p>使用 NebulaGraph Operator 创建NebulaGraph 集群后，用户可在NebulaGraph集群内部访问NebulaGraph，也可在集群外访问NebulaGraph。如果用户在集群内部，可以通过访问集群内的虚拟 IP 地址（ClusterIP）访问数据库。而如果用户在集群外部，则需要使用集群节点的公共 IP 地址或者通过部署 Nginx Ingress 控制器来访问NebulaGraph。IP 地址类型可以在创建集群的配置文件中，通过<code>spec.graphd.service</code>指定。关于 Service 的更多信息，参考 <a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a>。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>使用 NebulaGraph Operator 创建NebulaGraph集群。具体步骤参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署NebulaGraph集群</a> 或者<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署NebulaGraph集群</a>。</p>
 <h2 id="nebulagraphnebulagraph">在NebulaGraph集群内连接NebulaGraph<a class="headerlink" href="#nebulagraphnebulagraph" title="Permanent link">&para;</a></h2>
