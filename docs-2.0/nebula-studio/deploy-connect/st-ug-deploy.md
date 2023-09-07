@@ -79,7 +79,7 @@ $ bash /usr/local/nebula-graph-studio/scripts/rpm/start.sh
 $ bash /usr/local/nebula-graph-studio/scripts/rpm/stop.sh
 ```
 
-如果启动服务时遇到报错报错 `ERROR: bind EADDRINUSE 0.0.0.0:7001`，用户可以通过以下命令查看端口 7001 是否被占用。
+如果启动服务时遇到报错 `ERROR: bind EADDRINUSE 0.0.0.0:7001`，用户可以通过以下命令查看端口 7001 是否被占用。
 ```bash
 $ lsof -i:7001
 ```
