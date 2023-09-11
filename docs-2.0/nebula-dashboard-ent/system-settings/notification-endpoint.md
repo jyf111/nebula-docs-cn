@@ -49,8 +49,8 @@
 |`${alert.labels.endpointIP}` | 服务的 IP 地址。  |
 |`${alert.labels.instanceName}` |  服务名称。例如`192.168.10.100-graphd-9669`。 |
 |`${alert.labels.alertname}` | 告警名称。|
-|`${alert.labels.severity}` | 告警严重性。包含`emergency`、`critical`和`warning`。|
-|`${alert.labels.severityLevel}` | 告警严重级别。和告警严重性的对应关系为`emergency`=`1`、`critical`=`2`、`warning`=`3`。|
+|`${alert.labels.severity}` | 告警严重性。包含`emergency`、`critical`、`minor`、`warning`和`info`。|
+|`${alert.labels.severityLevel}` | 告警严重级别。和告警严重性的对应关系为`emergency`=`1`、`critical`=`2`、`minor`=`3`、`warning`=`4`、`info`=`5`。|
 |`${alert.labels.componentType}` |  告警服务类型。|
 |`${alert.annotations.summary}` | 告警摘要。|
 |`${alert.annotations.description}` |  告警消息描述。|
