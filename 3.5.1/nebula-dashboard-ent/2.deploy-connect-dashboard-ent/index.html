@@ -7110,10 +7110,10 @@
 </li>
 <li>
 <p>使用<code>tar -xzvf</code>解压 TAR 包。</p>
-<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xzvf<span class="w"> </span>nebula-dashboard-ent-&lt;version&gt;.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>&lt;install_path&gt;
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xzvf<span class="w"> </span>yueshu-dashboard-&lt;version&gt;.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>&lt;install_path&gt;
 </code></pre></div>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xzvf<span class="w"> </span>nebula-dashboard-ent-3.5.0.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>/usr/local/
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xzvf<span class="w"> </span>yueshu-dashboard-3.5.0.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>/usr/local/
 </code></pre></div>
 </li>
 <li>
@@ -7172,7 +7172,7 @@ LicenseManagerURL:<span class="w"> </span><span class="s2">&quot;&quot;</span><s
 <li>
 <p>启动悦数运维监控。</p>
 <p>可以使用以下命令一键启动悦数运维监控。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/local/nebula-dashboard-ent/scripts
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/local/yueshu-dashboard/scripts
 sudo<span class="w"> </span>./dashboard.service<span class="w"> </span>start<span class="w"> </span>all
 </code></pre></div>
 <p>或是执行以下命令，分别启动 Prometheus、nebula-dashboard-server、nebula-stats-exporter 和 Alertmanager 依赖服务以启动悦数运维监控。</p>
@@ -7198,11 +7198,11 @@ sudo<span class="w"> </span>./dashboard.service<span class="w"> </span>start<spa
 </li>
 <li>
 <p>使用<code>sudo rpm -ivh &lt;package_name&gt;</code>命令安装 RPM 包。</p>
-<p>例如，安装悦数运维监控需要运行以下命令，默认安装路径为<code>/usr/local/nebula-dashboard-ent</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>nebula-dashboard-ent-&lt;version&gt;.x86_64.rpm
+<p>例如，安装悦数运维监控需要运行以下命令，默认安装路径为<code>/usr/local/yueshu-dashboard</code>：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>yueshu-dashboard-&lt;version&gt;.x86_64.rpm
 </code></pre></div>
 <p>也可以使用以下命令安装到指定路径：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>nebula-dashboard-ent-xxx.rpm<span class="w"> </span>--prefix<span class="o">=</span>&lt;path&gt;<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>yueshu-dashboard-xxx.rpm<span class="w"> </span>--prefix<span class="o">=</span>&lt;path&gt;<span class="w"> </span>
 </code></pre></div>
 </li>
 <li>
@@ -7280,8 +7280,8 @@ sudo systemctl start nebula-dashboard.target   # 启动服务
 </li>
 <li>
 <p>使用<code>sudo dpkg -i &lt;package_name&gt;</code>命令安装 DEB 包。</p>
-<p>例如，安装悦数运维监控需要运行以下命令，默认安装路径为<code>/usr/local/nebula-dashboard-ent</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nebula-dashboard-ent-3.5.0.ubuntu1804.amd64.deb
+<p>例如，安装悦数运维监控需要运行以下命令，默认安装路径为<code>/usr/local/yueshu-dashboard</code>：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>yueshu-dashboard-3.5.0.ubuntu1804.amd64.deb
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -7525,7 +7525,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
       
     
   </small>
