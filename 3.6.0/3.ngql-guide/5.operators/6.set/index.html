@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -6013,7 +6024,7 @@ nebula&gt; UNWIND [1,2,3] AS a RETURN a \
 | &quot;player105&quot; |
 +-------------+
 </code></pre></div>
-<p><img alt="image" src="https://user-images.githubusercontent.com/42762957/97955863-3a213000-1de2-11eb-8de3-2c78da30747c.png" /></p>
+<p><a class="glightbox" href="https://user-images.githubusercontent.com/42762957/97955863-3a213000-1de2-11eb-8de3-2c78da30747c.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://user-images.githubusercontent.com/42762957/97955863-3a213000-1de2-11eb-8de3-2c78da30747c.png" /></a></p>
 <p>该查询会先执行红框内的语句，然后执行绿框的<code>UNION</code>操作。</p>
 <p>圆括号可以修改执行的优先级，例如：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; (GO FROM &quot;player102&quot; OVER follow \
@@ -6030,7 +6041,7 @@ nebula&gt; UNWIND [1,2,3] AS a RETURN a \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -6154,5 +6165,5 @@ nebula&gt; UNWIND [1,2,3] AS a RETURN a \
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

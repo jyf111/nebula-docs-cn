@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -5748,7 +5759,7 @@
   如果页面回到 <strong>图空间列表</strong>，而且列表中显示刚创建的图空间信息，表示图空间创建成功。</p>
 </li>
 </ol>
-<p><img alt="带有示例配置信息的图空间创建页面" src="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-006-cn.png" title="图空间创建页面" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-006-cn.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="带有示例配置信息的图空间创建页面" src="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-006-cn.png" title="图空间创建页面" /></a></p>
 <h2 id="_4">删除图空间<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
@@ -5760,7 +5771,7 @@
 </li>
 <li>
 <p>在图空间列表里，找到需要删除的图空间，并在 <strong>操作</strong> 列中，选择 <strong>删除图空间</strong>。</p>
-<p><img alt="在图空间列表中删除指定的图空间" src="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-007-cn.png" title="删除图空间" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-007-cn.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="在图空间列表中删除指定的图空间" src="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-007-cn.png" title="删除图空间" /></a></p>
 </li>
 <li>
 <p>在弹出的对话框中点击 <strong>确认</strong>。</p>
@@ -5779,7 +5790,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -5903,5 +5914,5 @@
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

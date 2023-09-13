@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -6128,7 +6139,7 @@
 <h2 id="_1">使用说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="schema">图空间和 Schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
 <p>一个NebulaGraph实例由一个或多个图空间组成。每个图空间都是物理隔离的，用户可以在同一个实例中使用不同的图空间存储不同的数据集。</p>
-<p><img alt="NebulaGraph and graph spaces" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-graph-instance-and-graph-spaces.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-graph-instance-and-graph-spaces.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="NebulaGraph and graph spaces" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-graph-instance-and-graph-spaces.png" /></a></p>
 <p>为了在图空间中插入数据，需要为图数据库定义一个 Schema。NebulaGraph的 Schema 是由如下几部分组成。</p>
 <table>
 <thead>
@@ -6158,7 +6169,7 @@
 </table>
 <p>更多信息，请参见<a href="https://docs.nebula-graph.com.cn/3.6.0/1.introduction/2.data-model/">数据结构</a>。</p>
 <p>本文将使用下图的数据集演示基础操作的语法。</p>
-<p><img alt="The demo dataset" src="https://docs-cdn.nebula-graph.com.cn/figures/dataset-for-crud.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/dataset-for-crud.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="The demo dataset" src="https://docs-cdn.nebula-graph.com.cn/figures/dataset-for-crud.png" /></a></p>
 <h3 id="_2">异步实现创建和修改<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -6683,7 +6694,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -6807,5 +6818,5 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

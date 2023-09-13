@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -5930,7 +5941,7 @@
 <li>支持向第三方系统进行同步（例如<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">全文索引</a>）</li>
 </ul>
 <h2 id="storage_1">Storage 服务架构<a class="headerlink" href="#storage_1" title="Permanent link">&para;</a></h2>
-<p><img alt="image" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/nebula-reading-storage-architecture.png" /></p>
+<p><a class="glightbox" href="https://www-cdn.nebula-graph.com.cn/nebula-blog/nebula-reading-storage-architecture.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/nebula-reading-storage-architecture.png" /></a></p>
 <p>Storage 服务是由 nebula-storaged 进程提供的，用户可以根据场景配置 nebula-storaged 进程数量，例如测试环境 1 个，生产环境 3 个。</p>
 <p>所有 nebula-storaged 进程构成了基于 Raft 协议的集群，整个服务架构可以分为三层，从上到下依次为：</p>
 <ul>
@@ -5963,7 +5974,7 @@
 </ul>
 <p>下文将基于架构介绍 Storage 服务的部分特性。</p>
 <h2 id="storage_2">Storage 写入流程<a class="headerlink" href="#storage_2" title="Permanent link">&para;</a></h2>
-<p><img alt="image" src="https://docs-cdn.nebula-graph.com.cn/figures/storage_write_process.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/storage_write_process.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://docs-cdn.nebula-graph.com.cn/figures/storage_write_process.png" /></a></p>
 <h2 id="kvstore">KVStore<a class="headerlink" href="#kvstore" title="Permanent link">&para;</a></h2>
 <p>NebulaGraph使用自行开发的 KVStore，而不是其他开源 KVStore，原因如下：</p>
 <ul>
@@ -6000,7 +6011,7 @@
 <li>
 <p>点数据存储格式</p>
 <p>相比NebulaGraph 2.x 版本，3.x 版本在开启<strong>无 Tag</strong> 的点配置后，每个点多了一个不含 TagID 字段并且无 value 的 key。</p>
-<p><img alt="The vertex format of storage service" src="https://docs-cdn.nebula-graph.com.cn/figures/3.0-vertex-key.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/3.0-vertex-key.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="The vertex format of storage service" src="https://docs-cdn.nebula-graph.com.cn/figures/3.0-vertex-key.png" /></a></p>
 <table>
 <thead>
 <tr>
@@ -6034,7 +6045,7 @@
 </li>
 </ul>
 <ul>
-<li>边数据存储格式<p><img alt="The edge format of storage service" src="https://docs-cdn.nebula-graph.com.cn/figures/3.0-edge-key.png" /></p>
+<li>边数据存储格式<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/3.0-edge-key.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="The edge format of storage service" src="https://docs-cdn.nebula-graph.com.cn/figures/3.0-edge-key.png" /></a></p>
 <table>
 <thead>
 <tr>
@@ -6080,10 +6091,10 @@
 <p>对于点或边的属性信息，NebulaGraph会将属性信息编码后按顺序存储。由于定长属性的长度是固定的，查询时可以根据偏移量快速查询。在解码之前，需要先从 Meta 服务中查询具体的 Schema 信息（并缓存）。同时为了支持在线变更 Schema，在编码属性时，会加入对应的 Schema 版本信息。</p>
 <h2 id="_4">数据分片<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>由于超大规模关系网络的节点数量高达百亿到千亿，而边的数量更会高达万亿，即使仅存储点和边两者也远大于一般服务器的容量。因此需要有方法将图元素切割，并存储在不同逻辑分片（Partition）上。NebulaGraph采用边分割的方式。</p>
-<p><img alt="data partitioning" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/DataModel02.png" /></p>
+<p><a class="glightbox" href="https://www-cdn.nebula-graph.com.cn/nebula-blog/DataModel02.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="data partitioning" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/DataModel02.png" /></a></p>
 <h3 id="_5">切边与存储放大<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>NebulaGraph中逻辑上的一条边对应着硬盘上的两个键值对（key-value pair），在边的数量和属性较多时，存储放大现象较明显。边的存储方式如下图所示。</p>
-<p><img alt="edge storage" src="https://docs-cdn.nebula-graph.com.cn/figures/edge-division.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/edge-division.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="edge storage" src="https://docs-cdn.nebula-graph.com.cn/figures/edge-division.png" /></a></p>
 <p>上图以最简单的两个点和一条边为例，起点 SrcVertex 通过边 EdgeA 连接目的点 DstVertex，形成路径<code>(SrcVertex)-[EdgeA]-&gt;(DstVertex)</code>。这两个点和一条边会以 6 个键值对的形式保存在存储层的两个不同分片，即 Partition x 和 Partition y 中，详细说明如下：</p>
 <ul>
 <li>点 SrcVertex 的键值保存在 Partition x 中。</li>
@@ -6237,7 +6248,7 @@ Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -6361,5 +6372,5 @@ Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

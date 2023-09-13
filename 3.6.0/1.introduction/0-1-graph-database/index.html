@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -5929,12 +5940,12 @@
 <h3 id="db-engines">DB-Engines 的统计<a class="headerlink" href="#db-engines" title="Permanent link">&para;</a></h3>
 <p>根据世界知名的数据库排名网站DB-Engines.com的统计，图数据库至2013年以来，一直是“增速最快”的数据库类别<sup id="fnref:dbe"><a class="footnote-ref" href="#fn:dbe">1</a></sup>。</p>
 <p>该网站根据一些指标来统计每种类别的数据库的流行度变化趋势，这些指标包括基于Google等搜索引擎的收录和趋势情况、主要IT技术论坛和社交网站上讨论的技术话题、招聘网站的职位变化等。该网站共收录了371种数据库产品，并分为12个类别。这12个类别中，图数据库这种类别的增速远远快于其他任何的类别。</p>
-<p><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/db-rankings.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/books/images/db-rankings.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/db-rankings.png" /></a></p>
 <h3 id="gartner">Gartner 的预测<a class="headerlink" href="#gartner" title="Permanent link">&para;</a></h3>
 <p>世界顶级智库Gartner早在2013年之前<sup id="fnref:Gartner1"><a class="footnote-ref" href="#fn:Gartner1">2</a></sup>，就将图数据库作为主要的"商业智能与分析技术趋势"。在那个时候，Big Data正火热的如日中天，数据科学家更是炙手可热的职位。</p>
-<p><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/gartner.jpg" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/books/images/gartner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/gartner.jpg" /></a></p>
 <p>直到最近，图数据库及相关的图技术依旧是"2021年十大数据与分析趋势"<sup id="fnref:Gartner2"><a class="footnote-ref" href="#fn:Gartner2">3</a></sup>:</p>
-<p><img alt="Image" src="https://images-cdn.newscred.com/Zz01NWM5ZDE3YzcxM2UxMWViODBhMDE5NTExMjNjOTZmZQ==" /></p>
+<p><a class="glightbox" href="https://images-cdn.newscred.com/Zz01NWM5ZDE3YzcxM2UxMWViODBhMDE5NTExMjNjOTZmZQ==" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://images-cdn.newscred.com/Zz01NWM5ZDE3YzcxM2UxMWViODBhMDE5NTExMjNjOTZmZQ==" /></a></p>
 <div class="admonition quote">
 <p class="admonition-title">趋势八：图技术使一切产生关联（Graph Relates Everything）</p>
 <p>图技术已成为许多现代数据和分析能力的基础，能够在不同的数据资产中发现人、地点、事物、事件和位置之间的关系。数据和分析领导者依靠图技术快速回答需要在了解情况并理解多个实体之间的联系和优势的性质后才能回答的复杂业务问题。</p>
@@ -5943,7 +5954,7 @@
 <p>可以注意到，Gartner 的预测比较好的吻合了 DB-Engines 的统计结论。技术的进步并不是完全线性的，通常会有一段快速发展的泡沫期，然后进入一段平台期，之后由于新的技术的出现产生新一轮的泡沫期，再经历一段平台期。以此往复螺旋形的循环发展。</p>
 <h3 id="_3">对于市场规模的预测<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>根据 verifiedmarketresearc<sup id="fnref:ver"><a class="footnote-ref" href="#fn:ver">4</a></sup>, fnfresearch<sup id="fnref:fnf"><a class="footnote-ref" href="#fn:fnf">5</a></sup>,  marketsandmarkets<sup id="fnref:mam"><a class="footnote-ref" href="#fn:mam">6</a></sup>, 以及 gartner<sup id="fnref:gar"><a class="footnote-ref" href="#fn:gar">7</a></sup> 等智库的统计和预测，图数据库市场（包括云服务）规模在2019年大约是8亿美元，将在未来6年保持25%左右的年复合增长(CAGR)至 30-40 亿美元，这大约对应于全球数据库市场 5-10% 的市场份额。</p>
-<p><img alt="Image" src="https://www.verifiedmarketresearch.com/wp-content/uploads/2020/10/Graph-Database-Market-Size.jpg" /></p>
+<p><a class="glightbox" href="https://www.verifiedmarketresearch.com/wp-content/uploads/2020/10/Graph-Database-Market-Size.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://www.verifiedmarketresearch.com/wp-content/uploads/2020/10/Graph-Database-Market-Size.jpg" /></a></p>
 <h2 id="_4">市场参与者<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="neo4j">（第一代）图数据库的先行者 Neo4j<a class="headerlink" href="#neo4j" title="Permanent link">&para;</a></h3>
 <p>虽然在 1970 年代，人们已经提出了一些类似于"图”的数据模型和产品原型（例如 CODASYL<sup id="fnref:DDIA"><a class="footnote-ref" href="#fn:DDIA">8</a></sup>)和相应的图语言 G/G+ 语言<sup id="fnref:Glang"><a class="footnote-ref" href="#fn:Glang">9</a></sup>。但真正能够让“图数据库”这个概念流行起来，不得不说到这个市场最主要的先行者 Neo4j，甚至(标签)属性图和图数据库这两个主要术语就是 Neo4j 最早提出并实践的。 </p>
@@ -5985,7 +5996,7 @@
 <p>Gremlin 和 Neo4j 的 Java API 一样，最初用于表达如何查询数据库的一种过程（Procedural）。它允许更短的语法来表达查询，也允许通过网络远程访问数据库。Gremlin 这种过程式的特性，需要用户知道如何采用最好的办法查询结果，这样对于应用程序开发人员来说仍旧有负担。与此同时，在过去30年中，声明式语言 SQL 取得了极大的成功：SQL 可以将“获取数据的声明方式”和“引擎如何获取数据”相分开，所以 Neo4j 的工程师们希望开发一种声明式的图查询语言。</p>
 <p>2010 年，Andrés Taylor 作为工程师加入 Neo4j。受 SQL 启发，他启动了一个项目来开发图查询语言，而这种新语言于 2011 年 Neo4j 1.4 发布，这种新语言就是如今大多数图查询语言的先祖——Cypher 。</p>
 <p>Cypher 的语法基础，是用 "ASCII艺术(ASCII art)" 来描述图模式。这种方式最初来源于 Neo4j 工程师团队在源代码中评注如何描述图模式。可以看下图的例子：</p>
-<p><img alt="Image" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/the-origin-of-cypher.png" /></p>
+<p><a class="glightbox" href="https://www-cdn.nebula-graph.com.cn/nebula-blog/the-origin-of-cypher.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/the-origin-of-cypher.png" /></a></p>
 <p>ASCII art 简单说，就是如何用可打印文本来描述点和边。Cypher 文本用<code>()</code>表示点，<code>-[]-&gt;</code>表示边。<code>(query)-[modeled as]-&gt;(drawing)</code> 来表示<code>起点 query</code>，<code>终点 drawing</code>，<code>边 modeled as</code>，这样一个最简单的图关系(也可以称为图模式)。</p>
 <p>Cypher 第一个版本实现了对图的读取，但是需要用户说明从哪些节点开始查询。只有从这些节点开始，才可以支持图的模式匹配。</p>
 <p>在后面的版本，2012 年 10 月发布的 Neo4j 1.8 中，Cypher 增加了修改图的能力。但查询还是需要指明从哪些节点开始。</p>
@@ -5999,7 +6010,7 @@
 <p>2018 年，基于 Redis 的图库(library) RedisGraph 采用 Cypher 作为其图语言</p>
 <p>2019 年，国际标准组织 ISO 启动两个项目，基于 openCypher, PGQL, GSQL<sup id="fnref:GSQL"><a class="footnote-ref" href="#fn:GSQL">12</a></sup>, and G-CORE 等现有业界成果，启动图语言国际标准的制定过程</p>
 <p>2019 年，NebulaGraph以 openCypher 为基础发布其扩展的图语言 NebulaGraph Query Language, nGQL。</p>
-<p><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/langhis.jpg" title="图语言的历史" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/books/images/langhis.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/langhis.jpg" title="图语言的历史" /></a></p>
 <h3 id="_7">分布式图数据库<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>大约 2005-2010 年，随着 Google 云计算"三驾马车"的发布，各种分布式的架构开始越来越流行，其中就包括以开源方式运作的 Hadoop 和 Cassandra 等。这里包括几个方面的影响：</p>
 <ol>
@@ -6014,11 +6025,11 @@
 <ul>
 <li>Neo4j 3.X 要求全量数据必须存放在单机中。虽然其也提供多机之间(Master-slave/slave)做全量复制和高可用，但数据不可切分为不同子图存放。</li>
 </ul>
-<p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/causal.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/books/images/causal.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/causal.png" /></a></p>
 <ul>
 <li>Neo4j 4.X 允许在不同机器上各存放一部分数据（子图），然后在应用层需通过一定方式拼装后(其称为编织 Fabric)<sup id="fnref:fosdem20"><a class="footnote-ref" href="#fn:fosdem20">13</a></sup>，将读写分发到各个机器上。这种做法需要应用层代码有大量的参与和工作。例如，设计如何把不同子图应该放置在哪些机器上，如何将从各机器获取的部分结果重新编织为最终的结果。</li>
 </ul>
-<p><img alt="" src="https://dist.neo4j.com/wp-content/uploads/20200131191103/Neo4j-Fabric-LDBC-sharding-scheme.jpg" /></p>
+<p><a class="glightbox" href="https://dist.neo4j.com/wp-content/uploads/20200131191103/Neo4j-Fabric-LDBC-sharding-scheme.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://dist.neo4j.com/wp-content/uploads/20200131191103/Neo4j-Fabric-LDBC-sharding-scheme.jpg" /></a></p>
 <p>其语法风格大体是
 <div class="highlight"><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">graphA</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">S1</span><span class="p">.</span><span class="m">1</span><span class="w"> </span><span class="err">从</span><span class="w"> </span><span class="n">Shard</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="err">读</span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="n">Movie</span><span class="p">)</span>
@@ -6028,11 +6039,11 @@
 <span class="k">MATCH</span><span class="w"> </span><span class="err">（</span><span class="n">move</span><span class="p">:</span><span class="n">Movie</span><span class="p">)</span>
 <span class="k">RETURN</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">title</span>
 </code></pre></div></p>
-<p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/fabric.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/books/images/fabric.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/fabric.png" /></a></p>
 <h4 id="titan_janusgraph">第二代（分布式）图数据库：Titan 和其后继者 JanusGraph<a class="headerlink" href="#titan_janusgraph" title="Permanent link">&para;</a></h4>
 <p>2011 年，Aurelius 公司成立，致力于开发一个开源的分布式图数据库 Titan<sup id="fnref:titan"><a class="footnote-ref" href="#fn:titan">14</a></sup>。到 2015 年 Titan 的第一个正式版发布，Titan 后端可以支持多种主流的分布式存储架构（例如 Cassandra, HBase, Elasticsearch, BerkeleyDB)，并可以复用 Hadoop 生态的诸多便利，前端以 Gremlin 为统一的查询语言。对于程序员使用、开发和社区参与都很方便。大规模的图，可以分片后存放在 HBase 或者 Cassarndar上(这些当时都已经是相对成熟的分布式存储方案)，Gremlin 语言虽然略微冗长但相对功能完备。整个方案在当时(2011-2015)体现了不错的竞争力。</p>
 <p>下图显示了 2012年 - 2015 年，Titan 和 Neo4j 在 GitHub.com 上 star 的增长情况。</p>
-<p><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/titan-2015-neo4j.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/books/images/titan-2015-neo4j.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/titan-2015-neo4j.png" /></a></p>
 <p>2015 年 Aurelius(Titan) 被 DataStax 收购，这之后 Titan 逐渐转变为一个闭源的商业产品 (DataStax Enterprise Graph)。</p>
 <p>在 Aurelius(Titan) 被收购后，市场对于开源分布式的图数据库一直仍有比较强烈的需求，而当时市场上成熟和活跃的产品并不多。大数据时代，数据仍在远快于摩尔定律的速度，源源不断的产生。Linux 基金会以及一些技术巨头(Expero, Google, GRAKN.AI, Hortonworks, IBM and Amazon) 在2017年，复制并分叉(fork)了原有的Titan项目，并启动为一个新项目 JanusGraph<sup id="fnref:Janus"><a class="footnote-ref" href="#fn:Janus">15</a></sup>。之后大多数的社区工作，包括开发、测试、发布和推广都逐步转移到了新的 JanusGraph。</p>
 <p>下图显示了两个项目2012-2021年日常代码提交(pull request)的变化情况，可以观察到几点：</p>
@@ -6044,7 +6055,7 @@
 <p>新项目 JanusGraph 项目在 2017 年 1 月启动后，其社区迅速活跃起来，短短一年时间就超越了 Titan 过去 5 年累计的 pull request 数量。而与此同时，Titan 开源项目就此停滞。</p>
 </li>
 </ol>
-<p><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/titan-janus-dev.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/books/images/titan-janus-dev.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://docs-cdn.nebula-graph.com.cn/books/images/titan-janus-dev.png" /></a></p>
 <h4 id="orientdb_tigergraph_arangodb_dgraph">同期知名产品 OrientDB, TigerGraph, ArangoDB, 和 DGraph<a class="headerlink" href="#orientdb_tigergraph_arangodb_dgraph" title="Permanent link">&para;</a></h4>
 <p>此后更多的厂商加入整个市场，除了由Linux基金会托管的 JanusGraph，还有一些由商业公司主导开发的分布式图数据，各方采用的数据模型和访问方式也有明显的不同。
 本文不做一一介绍，仅简单列出主要区别。</p>
@@ -6166,7 +6177,7 @@ Oracle graph<sup id="fnref:Oracle"><a class="footnote-ref" href="#fn:Oracle">18<
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -6290,5 +6301,5 @@ Oracle graph<sup id="fnref:Oracle"><a class="footnote-ref" href="#fn:Oracle">18<
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

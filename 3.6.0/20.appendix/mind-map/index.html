@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -5618,16 +5629,16 @@
 
 <h1 id="_1">思维导图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>以下给出NebulaGraph结构框架的思维导图，用户可以<a href="https://www.mubucm.com/doc/34QEdbrFRwZ">点击</a> 并查看大图。</p>
-<p><img alt="NebulaGraph" src="https://docs-cdn.nebula-graph.com.cn/figures/Unknown-2.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/Unknown-2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="NebulaGraph" src="https://docs-cdn.nebula-graph.com.cn/figures/Unknown-2.png" /></a></p>
 <p>以下给出 nGQL 的思维导图，用户可以<a href="https://www.mubucm.com/doc/3heEUeLwbMZ">点击</a> 并查看大图。</p>
-<p><img alt="nGQL" src="https://docs-cdn.nebula-graph.com.cn/figures/Unknown-3.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/Unknown-3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="nGQL" src="https://docs-cdn.nebula-graph.com.cn/figures/Unknown-3.png" /></a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -5751,5 +5762,5 @@
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

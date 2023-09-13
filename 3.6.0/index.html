@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -5719,7 +5730,7 @@
 <h1 id="nebulagraph_360">欢迎阅读NebulaGraph 3.6.0 文档<a class="headerlink" href="#nebulagraph_360" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>本文档更新时间2023-9-12，GitHub commit <a href="https://github.com/vesoft-inc/nebula-docs/commits/v3.6.0">6a1e43e2</a>。该版本主色系为"桑色"，色号为 #55295B。</p>
+<p>本文档更新时间2023-9-13，GitHub commit <a href="https://github.com/vesoft-inc/nebula-docs/commits/v3.6.0">144aa355</a>。该版本主色系为"桑色"，色号为 #55295B。</p>
 </div>
 <!--
 !!! caution
@@ -5804,7 +5815,7 @@ NebulaGraph 是一款开源的、分布式的、易扩展的原生图数据库�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -5913,5 +5924,5 @@ NebulaGraph 是一款开源的、分布式的、易扩展的原生图数据库�
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

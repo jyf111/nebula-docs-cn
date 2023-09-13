@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -5682,7 +5693,7 @@
 <p>NebulaGraph由三种服务构成：Graph 服务、Meta 服务和 Storage 服务，是一种存储与计算分离的架构。</p>
 <p>每个服务都有可执行的二进制文件和对应进程，用户可以使用这些二进制文件在一个或多个计算机上部署NebulaGraph集群。</p>
 <p>下图展示了NebulaGraph集群的经典架构。</p>
-<p><img alt="NebulaGraph architecture" src="https://docs-cdn.nebula-graph.com.cn/figures/nebula-graph-architecture_3.png" title="NebulaGraph architecture" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/nebula-graph-architecture_3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="NebulaGraph architecture" src="https://docs-cdn.nebula-graph.com.cn/figures/nebula-graph-architecture_3.png" title="NebulaGraph architecture" /></a></p>
 <h2 id="meta">Meta 服务<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
 <p>在NebulaGraph架构中，Meta 服务是由 nebula-metad 进程提供的，负责数据管理，例如 Schema 操作、集群管理和用户权限管理等。</p>
 <p>Meta 服务的详细说明，请参见 <a href="../2.meta-service/">Meta 服务</a>。</p>
@@ -5713,7 +5724,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -5837,5 +5848,5 @@
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

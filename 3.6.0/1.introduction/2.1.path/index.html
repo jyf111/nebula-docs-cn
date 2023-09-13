@@ -70,7 +70,18 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -5708,7 +5719,7 @@
 <p>图论中一个非常重要的概念是路径，路径是指一个有限或无限的边序列，这些边连接着一系列的点。</p>
 <p>路径的类型分为三种：<code>walk</code>、<code>trail</code>、<code>path</code>。关于路径的详细说明，请参见<a href="https://en.wikipedia.org/wiki/Path_(graph_theory)#Walk,_trail,_path">维基百科</a>。</p>
 <p>本文以下图为例进行简单介绍。</p>
-<p><img alt="路径示例" src="https://docs-cdn.nebula-graph.com.cn/figures/path1.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/path1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="路径示例" src="https://docs-cdn.nebula-graph.com.cn/figures/path1.png" /></a></p>
 <h2 id="walk">walk<a class="headerlink" href="#walk" title="Permanent link">&para;</a></h2>
 <p><code>walk</code>类型的路径由有限或无限的边序列构成。遍历时点和边可以重复。</p>
 <p>查看示例图，由于 C、D、E 构成了一个环，因此该图包含无限个路径，例如<code>A-&gt;B-&gt;C-&gt;D-&gt;E</code>、<code>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C</code>、<code>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C-&gt;D</code>。</p>
@@ -5724,7 +5735,7 @@
 <p><code>MATCH</code>、<code>FIND PATH</code>和<code>GET SUBGRAPH</code>语句采用的是<code>trail</code>类型路径。</p>
 </div>
 <p>在 trail 类型中，还有<code>cycle</code>和<code>circuit</code>两种特殊的路径类型，以下图为例对这两种特殊的路径类型进行介绍。</p>
-<p><img alt="trail 示例" src="https://docs-cdn.nebula-graph.com.cn/figures/Circuits1.png" /></p>
+<p><a class="glightbox" href="https://docs-cdn.nebula-graph.com.cn/figures/Circuits1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="trail 示例" src="https://docs-cdn.nebula-graph.com.cn/figures/Circuits1.png" /></a></p>
 <ul>
 <li>
 <p>cycle</p>
@@ -5750,7 +5761,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
@@ -5874,5 +5885,5 @@
         <script src="https://www-cdn.nebula-graph.com.cn/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
