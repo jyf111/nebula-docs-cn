@@ -5788,7 +5788,7 @@
 </tr>
 <tr>
 <td align="left"><code>partition_num</code></td>
-<td align="left">指定图空间的分片数量。建议设置为集群中硬盘数量的 20 倍（HDD 硬盘建议为 2 倍）。例如集群中有 3 个硬盘，建议设置 60 个分片。默认值为 100。</td>
+<td align="left">指定图空间的分片数量。建议设置为集群中硬盘数量的 20 倍（HDD 硬盘建议为 2 倍）。例如集群中有 3 个硬盘，建议设置 60 个分片。默认值为 10。</td>
 </tr>
 <tr>
 <td align="left"><code>replica_factor</code></td>
@@ -5804,10 +5804,6 @@
 </tr>
 </tbody>
 </table>
-<!--
-|`zone_list`|指定图空间所属的 Zone 列表，将在这些 Zone 中创建分片和对应副本。副本数量不能超过指定 Zone 数量。不指定`zone_list`时，默认属于所有 Zone。详情请参见 [管理逻辑机架（Zone）](../../4.deployment-and-installation/5.zone.md)。|
--->
-
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <ul>
@@ -5901,9 +5897,9 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
 | Host        | Port | Status   | Leader count | Leader distribution            | Partition distribution         | Version |
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
-| &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
-| &quot;storaged1&quot; | 9779  | &quot;ONLINE&quot; | 9            | &quot;basketballplayer:4, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
-| &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;           | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
+| &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.6.0&quot; |
+| &quot;storaged1&quot; | 9779 | &quot;ONLINE&quot; | 9            | &quot;basketballplayer:4, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.6.0&quot; |
+| &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;           | &quot;basketballplayer:10, test:10&quot; | &quot;3.6.0&quot; |
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
 </code></pre></div>
 <p>如果需要均衡负载，请执行如下命令：</p>
@@ -5923,7 +5919,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>
