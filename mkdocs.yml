@@ -170,15 +170,16 @@ plugins:
 #    regex:
 #      - '.*\.(tmp|bin|tar)$'
   - with-pdf:
-      copyright: 2023 vesoft Inc.
-      cover_subtitle: v3.5.1
-      author: 梁振亚，黄凤仙
+      cover_subtitle: v3.5.1      
       cover: true
       back_cover: true
 # nav.comm.begin
+      author: 梁振亚，黄凤仙
+      copyright: 2023 vesoft Inc.
       cover_logo: 'https://cloud-cdn.nebula-graph.com.cn/nebula-for-pdf.png'
 # nav.comm.end
 # nav.ent.begin
+      copyright: Copyright @ Yueshu Graph Technology - All rights reserved.
       cover_logo: 'https://docs-cdn.nebula-graph.com.cn/figures/yueshu_favicon_230515.png'
 # nav.ent.end
       pdf_stylesheets:
