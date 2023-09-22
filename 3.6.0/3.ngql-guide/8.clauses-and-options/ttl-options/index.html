@@ -1923,6 +1923,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ttl_2" class="md-nav__link">
+    使用 TTL 选项
+  </a>
+  
+    <nav class="md-nav" aria-label="使用 TTL 选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag_edge_type" class="md-nav__link">
+    Tag 或 Edge type 已存在
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag_edge_type_1" class="md-nav__link">
+    Tag 或 Edge type 不存在
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     属性过期
   </a>
@@ -1953,33 +1980,6 @@
   <a href="#_5" class="md-nav__link">
     过期处理
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ttl_2" class="md-nav__link">
-    使用 TTL 选项
-  </a>
-  
-    <nav class="md-nav" aria-label="使用 TTL 选项">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tag_edge_type" class="md-nav__link">
-    Tag 或 Edge type 已存在
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tag_edge_type_1" class="md-nav__link">
-    Tag 或 Edge type 不存在
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5752,6 +5752,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ttl_2" class="md-nav__link">
+    使用 TTL 选项
+  </a>
+  
+    <nav class="md-nav" aria-label="使用 TTL 选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag_edge_type" class="md-nav__link">
+    Tag 或 Edge type 已存在
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag_edge_type_1" class="md-nav__link">
+    Tag 或 Edge type 不存在
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     属性过期
   </a>
@@ -5786,33 +5813,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ttl_2" class="md-nav__link">
-    使用 TTL 选项
-  </a>
-  
-    <nav class="md-nav" aria-label="使用 TTL 选项">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tag_edge_type" class="md-nav__link">
-    Tag 或 Edge type 已存在
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tag_edge_type_1" class="md-nav__link">
-    Tag 或 Edge type 不存在
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     删除存活时间
   </a>
@@ -5840,7 +5840,7 @@
 
 
 <h1 id="ttl">TTL<a class="headerlink" href="#ttl" title="Permanent link">&para;</a></h1>
-<p>TTL（Time To Live）指定属性的存活时间，超时后，该属性就会过期。</p>
+<p>TTL（Time To Live）是一个定义数据生存期的机制。当数据达到其预设的生存时间后，它会被自动从图数据库中删除。这种功能尤其适合于只需要暂时存储的数据，例如临时会话或缓存数据。</p>
 <h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <p>本文操作仅适用于原生 nGQL。</p>
 <h2 id="_1">注意事项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -5870,7 +5870,7 @@
 <tbody>
 <tr>
 <td align="left"><code>ttl_col</code></td>
-<td align="left">指定要设置存活时间的属性。属性的数据类型必须是<code>int</code>或者<code>timestamp</code>。</td>
+<td align="left">指定一个现有的要设置存活时间的属性。属性的数据类型必须是<code>int</code>或者<code>timestamp</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>ttl_duration</code></td>
@@ -5885,6 +5885,28 @@
 <li>在设置<code>ttl_use_ms</code>为<code>true</code>后，即设置<code>ttl_duration</code>的默认单位为毫秒后，<code>ttl_col</code>的默认单位仍然为秒，它的数据类型必须是<code>int</code>，并且需要手动转换属性值为毫秒。例如设置<code>ttl_col</code>为<code>a</code>，则需要将<code>a</code>的值转换为毫秒，如当<code>a</code>的值为<code>now()</code>，则需要将<code>a</code>的值设置为<code>now() * 1000</code>。</li>
 </ul>
 </div>
+<h2 id="ttl_2">使用 TTL 选项<a class="headerlink" href="#ttl_2" title="Permanent link">&para;</a></h2>
+<p>在使用 TTL 功能之前，必须先创建一个时间戳或整数属性，并在 TTL 选项中指定了它。数据库不会自动为您创建或管理这个时间戳属性。</p>
+<p>在插入时间戳或整数属性的值时，建议使用<code>now()</code>函数或者当前时间戳来代表当前时间。</p>
+<h3 id="tag_edge_type">Tag 或 Edge type 已存在<a class="headerlink" href="#tag_edge_type" title="Permanent link">&para;</a></h3>
+<p>如果 Tag 和 Edge type 已经创建，请使用<code>ALTER</code>语句更新 Tag 或 Edge type。</p>
+<div class="highlight"><pre><span></span><code># 创建 Tag。
+nebula&gt; CREATE TAG IF NOT EXISTS t1 (a timestamp);
+
+# ALTER 修改 Tag，添加 TTL 选项。
+nebula&gt; ALTER TAG t1 TTL_COL = &quot;a&quot;, TTL_DURATION = 5;
+
+# 插入点，插入后 5 秒过期。
+nebula&gt; INSERT VERTEX t1(a) VALUES &quot;101&quot;:(now());
+</code></pre></div>
+<h3 id="tag_edge_type_1">Tag 或 Edge type 不存在<a class="headerlink" href="#tag_edge_type_1" title="Permanent link">&para;</a></h3>
+<p>创建 Tag 或 Edge type 时可以同时设置 TTL 选项。详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a> 和 <a href="../../11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
+<div class="highlight"><pre><span></span><code># 创建 Tag 并设置 TTL 选项。
+nebula&gt; CREATE TAG IF NOT EXISTS t2(a int, b int, c string) TTL_DURATION= 100, TTL_COL = &quot;a&quot;;
+
+# 插入点。过期时间戳为 1648197238（1648197138 + 100）。
+nebula&gt; INSERT VERTEX t2(a, b, c) VALUES &quot;102&quot;:(1648197138, 30, &quot;Hello&quot;);
+</code></pre></div>
 <h2 id="_2">属性过期<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -5912,26 +5934,6 @@
 <p class="admonition-title">Note</p>
 <p>如果<a href="#ttl_1">关闭 TTL 选项</a>，上一次 Compaction 之后的过期数据将可以被查询到。</p>
 </div>
-<h2 id="ttl_2">使用 TTL 选项<a class="headerlink" href="#ttl_2" title="Permanent link">&para;</a></h2>
-<h3 id="tag_edge_type">Tag 或 Edge type 已存在<a class="headerlink" href="#tag_edge_type" title="Permanent link">&para;</a></h3>
-<p>如果 Tag 和 Edge type 已经创建，请使用<code>ALTER</code>语句更新 Tag 或 Edge type。</p>
-<div class="highlight"><pre><span></span><code># 创建 Tag。
-nebula&gt; CREATE TAG IF NOT EXISTS t1 (a timestamp);
-
-# ALTER 修改 Tag，添加 TTL 选项。
-nebula&gt; ALTER TAG t1 TTL_COL = &quot;a&quot;, TTL_DURATION = 5;
-
-# 插入点，插入后 5 秒过期。
-nebula&gt; INSERT VERTEX t1(a) VALUES &quot;101&quot;:(now());
-</code></pre></div>
-<h3 id="tag_edge_type_1">Tag 或 Edge type 不存在<a class="headerlink" href="#tag_edge_type_1" title="Permanent link">&para;</a></h3>
-<p>创建 Tag 或 Edge type 时可以同时设置 TTL 选项。详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a> 和 <a href="../../11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
-<div class="highlight"><pre><span></span><code># 创建 Tag 并设置 TTL 选项。
-nebula&gt; CREATE TAG IF NOT EXISTS t2(a int, b int, c string) TTL_DURATION= 100, TTL_COL = &quot;a&quot;;
-
-# 插入点。过期时间戳为 1648197238（1648197138 + 100）。
-nebula&gt; INSERT VERTEX t2(a, b, c) VALUES &quot;102&quot;:(1648197138, 30, &quot;Hello&quot;);
-</code></pre></div>
 <h2 id="_6">删除存活时间<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>删除存活时间可以使用如下几种方法：</p>
 <ul>
@@ -5955,7 +5957,7 @@ nebula&gt; INSERT VERTEX t2(a, b, c) VALUES &quot;102&quot;:(1648197138, 30, &qu
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2023</span>
       
     
   </small>

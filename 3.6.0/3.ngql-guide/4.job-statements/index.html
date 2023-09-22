@@ -5925,7 +5925,7 @@ nebula&gt; SUBMIT JOB INGEST;
 <p>Meta 服务将<code>SUBMIT JOB</code>请求解析为多个任务，然后分配给进程 nebula-storaged。<code>SHOW JOB &lt;job_id&gt;</code>语句显示当前图空间内指定作业和相关任务的信息。</p>
 <p><code>job_id</code>在执行<code>SUBMIT JOB</code>语句时会返回。</p>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOB 9;
+<div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOB 8;
 +----------------+-----------------+------------+----------------------------+----------------------------+-------------+
 | Job Id(TaskId) | Command(Dest)   | Status     | Start Time                 | Stop Time                  | Error Code  |
 +----------------+-----------------+------------+----------------------------+----------------------------+-------------+
@@ -6057,7 +6057,7 @@ nebula&gt; SUBMIT JOB INGEST;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2023</span>
       
     
   </small>
