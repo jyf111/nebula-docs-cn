@@ -170,9 +170,14 @@ plugins:
 #    regex:
 #      - '.*\.(tmp|bin|tar)$'
   - with-pdf:
+# nav.comm.begin      
       copyright: 2023 vesoft Inc.
-      cover_subtitle: v3.5.0
       author: 梁振亚，黄凤仙
+# nav.comm.end
+# nav.ent.begin      
+      copyright: Copyright @ Yueshu Graph Technology - All rights reserved.
+# nav.ent.end 
+      cover_subtitle: v3.5.0
       cover: true
       back_cover: true
 # nav.comm.begin
