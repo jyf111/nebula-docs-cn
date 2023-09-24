@@ -179,7 +179,7 @@ plugins:
       cover_logo: 'https://cloud-cdn.nebula-graph.com.cn/nebula-for-pdf.png'
 # nav.comm.end
 # nav.ent.begin
-      copyright: Copyright @ Yueshu Graph Technology - All rights reserved.
+      copyright: Copyright &copy; Yueshu Graph Technology - All rights reserved.
       cover_logo: 'https://docs-cdn.nebula-graph.com.cn/figures/yueshu_favicon_230515.png'
 # nav.ent.end
       pdf_stylesheets:
