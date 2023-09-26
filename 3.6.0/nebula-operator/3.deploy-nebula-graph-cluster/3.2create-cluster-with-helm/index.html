@@ -5775,12 +5775,12 @@
 <span class="w">    </span>--set<span class="w"> </span>nebula.version<span class="o">=</span>v3.6.0<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="c1"># 指定集群 chart 的版本，不指定则默认安装最新版本 chart。</span>
 <span class="w">    </span><span class="c1"># 执行 helm search repo nebula-operator/nebula-cluster 命令可查看所有 chart 版本。</span>
-<span class="w">    </span>--version<span class="o">=</span><span class="m">1</span>.5.0<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--version<span class="o">=</span><span class="m">1</span>.6.2<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--namespace<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\ </span><span class="w">     </span>
 </code></pre></div>
-<p>执行<code>helm show values nebula-operator/nebula-cluster</code>命令，或者单击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/release-1.5/charts/nebula-cluster/values.yaml">nebula-cluster/values.yaml
+<p>执行<code>helm show values nebula-operator/nebula-cluster</code>命令，或者单击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/release-1.6/charts/nebula-cluster/values.yaml">nebula-cluster/values.yaml
 </a> 可查看NebulaGraph集群的所有配置参数。</p>
-<p>单击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/release-1.5/doc/user/nebula_cluster_helm_guide.md#optional-chart-parameters">Chart parameters</a> 查看可配置的集群参数的描述及默认值。</p>
+<p>单击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/release-1.6/doc/user/nebula_cluster_helm_guide.md#optional-chart-parameters">Chart parameters</a> 查看可配置的集群参数的描述及默认值。</p>
 <p>通过<code>--set</code>参数设置NebulaGraph集群的配置参数，例如，<code>--set nebula.storaged.replicas=3</code>可设置NebulaGraph集群中 Storage 服务的副本数为 3。</p>
 </li>
 <li>
@@ -5806,7 +5806,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2023</span>
       
     
   </small>
