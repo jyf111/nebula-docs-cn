@@ -1085,6 +1085,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    集合运算与变量语句的范围与运算顺序
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5683,6 +5690,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    集合运算与变量语句的范围与运算顺序
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5741,6 +5755,17 @@
 | &quot;Hornets&quot; | &quot;Tony Parker&quot;   |
 | &quot;Spurs&quot;   | &quot;Manu Ginobili&quot; |
 +-----------+-----------------+
+</code></pre></div>
+<h2 id="_3">集合运算与变量语句的范围与运算顺序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>当我们需要对集合运算的复合语句进行变量赋值时，需要注意用括号包裹语句的范围，比如下边的例子里<code>$var</code>赋值的来源是两个语句<code>INTERSECT</code>之后的输出。</p>
+<div class="highlight"><pre><span></span><code>$var = ( \
+    GO FROM &quot;player100&quot; OVER follow \
+      YIELD dst(edge) AS id \
+    INTERSECT \
+    GO FROM &quot;player100&quot; OVER follow \
+      YIELD dst(edge) AS id \
+       ); \
+    GO FROM $var.id OVER follow YIELD follow.degree AS degree
 </code></pre></div>
 
   <hr>
