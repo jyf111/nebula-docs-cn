@@ -7260,8 +7260,8 @@ LicenseManagerURL:<span class="w"> </span><span class="s2">&quot;&quot;</span><s
 </li>
 <li>
 <p>使用以下命令查看所有服务状态、启动服务。</p>
-<div class="highlight"><pre><span></span><code>sudo systemctl list-dependencies nebula-dashboard.target  # 查看状态
-sudo systemctl start nebula-dashboard.target   # 启动服务
+<div class="highlight"><pre><span></span><code>sudo systemctl list-dependencies yueshu-dashboard.target  # 查看状态
+sudo systemctl start yueshu-dashboard.target   # 启动服务
 </code></pre></div>
 <p>用户也可以执行以下命令查看、启停单一服务。</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl {status|stop|start}  {nbd-prometheus.service|nbd-alert-manager.service|nbd-stats-exporter.service|nbd-webserver.service}
@@ -7343,8 +7343,8 @@ LicenseManagerURL:<span class="w"> </span><span class="s2">&quot;&quot;</span><s
 </li>
 <li>
 <p>使用以下命令查看所有服务状态、启动服务。</p>
-<div class="highlight"><pre><span></span><code>sudo systemctl list-dependencies nebula-dashboard.target  # 查看状态
-sudo systemctl start nebula-dashboard.target   # 启动服务
+<div class="highlight"><pre><span></span><code>sudo systemctl list-dependencies yueshu-dashboard.target  # 查看状态
+sudo systemctl start yueshu-dashboard.target   # 启动服务
 </code></pre></div>
 <p>用户也可以执行以下命令查看、启停单一服务。</p>
 <div class="highlight"><pre><span></span><code>sudo {systemctl status|stop|start}  {nbd-prometheus.service|nbd-alert-manager.service|nbd-stats-exporter.service|nbd-webserver.service}
@@ -7437,8 +7437,8 @@ sudo<span class="w"> </span>/dashboard/scripts/dashboard.service<span class="w">
 <ul>
 <li>
 <p>使用 RPM 包或 DEB 包安装的用户，还可以使用 systemd 管理服务。通过<code>systemctl</code>命令进行服务启动、查看、重启和停止。</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nebula-dashboard.target<span class="w"> </span><span class="c1"># 启动服务</span>
-sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nebula-dashboard.target<span class="w"> </span><span class="c1"># 查看服务状态</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>yueshu-dashboard.target<span class="w"> </span><span class="c1"># 启动服务</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>yueshu-dashboard.target<span class="w"> </span><span class="c1"># 查看服务状态</span>
 sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>&lt;nbd-prometheus.service<span class="p">|</span>nbd-alert-manager.service<span class="p">|</span>nbd-stats-exporter.service<span class="p">|</span>nbd-webserver.service&gt;<span class="w"> </span><span class="c1"># 分别重启服务</span>
 sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>&lt;nbd-prometheus.service<span class="p">|</span>nbd-alert-manager.service<span class="p">|</span>nbd-stats-exporter.service<span class="p">|</span>nbd-webserver.service&gt;<span class="w"> </span><span class="c1"># 分别停止服务</span>
 </code></pre></div>
@@ -7525,7 +7525,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2023</span>
       
     
   </small>
