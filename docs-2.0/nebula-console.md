@@ -40,7 +40,7 @@ NebulaGraph Console 的获取方式如下：
 - 开启 SSL 加密且需要双向认证
 
   ```bash
-  ./nebula-console -addr 192.168.8.100 -port 9669 -u root  -p nebula -enable_ssl -ssl_root_ca_path /home/xxx/cert/root.crt -ssl_cert_path /home/xxx/cert/client.crt -ssl_private_key_path /home/xxx/cert/client.key
+  ./nebula-console -addr 192.168.8.100 -port 9669 -u root  -p nebula -enable_ssl -ssl_root_ca_path /home/xxx/cert/root.crt -ssl_cert_path /home/xxx/cert/server.crt -ssl_private_key_path /home/xxx/cert/server.key
   ```
 
 常用参数的说明如下。
